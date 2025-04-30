@@ -1,0 +1,441 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #ffffff;
+    line-height: 1.6;
+    padding-bottom: 60px; /* Espaço para a barra fixa */
+}
+
+/* Seção Navbar */
+#navbar {
+    background-color: #930000 !important;
+    padding: 10px 0;
+}
+
+/* Seção Principal */
+#main-section {
+    background-color: #000818;
+    padding: 30px 0 100px;
+}
+
+.main-text {
+    font-size: 2.2em;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.9px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+}
+
+/* Container de Vídeo */
+.video-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 16/9;
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.video-container:hover img {
+    transform: scale(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.play-icon {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    transition: all 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.video-container:hover .play-icon {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.play-text {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0.95;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.video-container:hover .play-text {
+    transform: translateX(-50%) scale(1.05);
+    opacity: 1;
+}
+
+/* Volume Reminder */
+.volume-reminder {
+    font-size: 0.6rem;
+    color: #ffffff;
+    margin-bottom: -12px;
+}
+
+/* Botão CTA */
+.action-button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.6px;
+    background-color: #c40b0c !important;
+    border-color: #c40b0c !important;
+    padding: 18px 85px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(196, 11, 12, 0.4);
+}
+
+@media (max-width: 576px) {
+    .action-button {
+        padding: 18px;
+        width: 100%;
+    }
+}
+
+/* Métodos de Pagamento */
+.payment-methods {
+    margin-top: -10px;
+}
+
+.payment-icons {
+    margin: 15px auto 5px;
+    font-size: 0;
+}
+
+.payment-icons i {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 8px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.payment-icons i:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.payment-icon-animated {
+    animation: paymentIconPulse 2s infinite;
+}
+
+@keyframes paymentIconPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.payment-icons .fa-cc-visa {
+    color: #0157a2;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.payment-icons .fa-cc-mastercard {
+    color: #ea001b;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.payment-icons .fa-cc-amex {
+    color: #2671b9;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.payment-icons .fa-pix {
+    color: #32bcad;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 0 5px;
+}
+
+.payment-security {
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.payment-security i {
+    color: #4BB543;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .payment-icons i {
+        font-size: 1.7rem;
+        margin: 0 6px;
+    }
+    
+    .payment-security {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .payment-icons i {
+        font-size: 1.5rem;
+        margin: 0 4px;
+    }
+}
+
+/* Seção de Comentários */
+.comments-section {
+    background-color: #000818;
+}
+
+.comment-container {
+    background-color: #FFFCFC;
+    border: solid 1px #EBEBEB;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    color: #333;
+    text-align: left;
+    padding: 30px 50px;
+    font-size: 14px;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .comment-container {
+        padding: 20px 15px;
+    }
+}
+
+.count-comments {
+    font-weight: 600;
+    border-bottom: solid 1px #dcdcdc;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+.comment-avatar {
+    min-width: 40px;
+    min-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    background-color: #999;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.comment-name {
+    font-weight: 800;
+    color: #365899;
+    font-size: 14px;
+}
+
+.comment-text {
+    color: #090909;
+    font-size: 14px;
+}
+
+@media (max-width: 576px) {
+    .comment-item {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .comment-content {
+        flex: 1;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    
+    .comment-text {
+        font-size: 13px;
+    }
+    
+    .comment-replies {
+        margin-left: 25px !important;
+        padding-left: 8px !important;
+    }
+}
+
+.comment-actions {
+    color: #93979F;
+    font-size: 11px;
+}
+
+.comment-replies {
+    margin-top: -10px;
+    margin-left: 40px;
+    padding-left: 10px;
+    border-left: solid 1px #dcdcdc;
+}
+
+.fb-plugin-footer {
+    color: #666666;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.fb-icon {
+    width: 17px;
+    border-radius: 2px;
+    margin-right: 10px;
+    margin-top: -1px;
+}
+
+/* Logo */
+.logo-img {
+    width: 24%;
+}
+
+/* Footer */
+.disclaimer {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    padding: 50px;
+}
+
+@media (max-width: 768px) {
+    .disclaimer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+/* Barra de Retorno para Projetos */
+.return-to-projects-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #17a2b8, #0056b3);
+    text-align: center;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.15);
+}
+
+.return-to-projects-btn {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 8px 30px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    position: relative;
+    max-width: 100%;
+}
+
+.return-to-projects-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.land-logo-btn {
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 0;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.return-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1.05rem;
+}
+
+.return-to-projects-btn i {
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.return-to-projects-btn:hover i {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .return-text {
+        font-size: 0.95rem;
+    }
+    
+    .land-logo-btn {
+        height: 45px;
+        margin-left: 15px;
+        margin-right: 0;
+    }
+    
+    .return-to-projects-bar {
+        padding: 12px 0;
+    }
+    
+    .return-to-projects-btn {
+        padding: 10px 15px;
+        width: 100%;
+        max-width: 350px;
+        font-size: 0.95rem;
+    }
+}

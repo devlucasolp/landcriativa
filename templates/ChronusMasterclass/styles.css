@@ -1,0 +1,355 @@
+/* Estilos gerais */
+body {
+    font-family: 'Maven Pro', sans-serif;
+    color: #FFFFFF;
+    line-height: 1.6;
+    background-color: #18120C;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Header Section */
+.header-section {
+    background-image: url('imgs/chronus-bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 150px 0 0;
+    margin-bottom: -1px; /* Elimina gap entre a seção e a onda */
+}
+
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(24, 18, 12, 0.9);
+    z-index: 0;
+}
+
+.header-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Onda de transição */
+.wave-divider {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+    margin-top: -1px; /* Garante que não haja gap */
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.date {
+    font-size: 1.1rem;
+    color: #EFE3C5;
+    margin-bottom: 30px;
+}
+
+.signup-form {
+    margin-top: 30px;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #FFFFFF;
+    padding: 12px 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-control::placeholder {
+    color: #FFFFFF;
+}
+
+.btn-garantir {
+    background-color: #FFBA00;
+    border: none;
+    color: #251300;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-garantir:hover {
+    background-color: #FF9C00;
+    color: #251300;
+}
+
+.expert-image {
+    margin-top: -80px;
+    margin-bottom: -21px;
+    text-align: right;
+}
+
+/* Procrastination Section */
+.procrastination-section {
+    background-color: #0D0906;
+    padding: 80px 0;
+    position: relative;
+    margin-top: -1px; /* Elimina gap entre a onda e a seção */
+}
+
+.procrastination-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('imgs/bg-2-1.jpg');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5; /* Reduzindo a opacidade para um efeito mais escuro */
+    z-index: 0;
+}
+
+.procrastination-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.content-text {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.depression-image, .success-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Section */
+.about-section {
+    background-color: #FF9C00;
+    padding: 50px 0;
+}
+
+.expert-image-2 {
+    margin: -60px 0;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #18120C;
+    padding: 40px 0;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 25%;
+    margin: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .header-section {
+        padding: 80px 0 0;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .expert-image, .expert-image-2 {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .depression-image, .success-image, .expert-image-2 {
+        margin: -40px;
+    }
+    
+    .content-text {
+        padding: 10px;
+    }
+    
+    .wave-divider svg {
+        height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        padding: 50px 0 0;
+    }
+    
+    .procrastination-section, .about-section {
+        padding: 50px 0;
+    }
+    
+    .success-image {
+        margin: 0 -40px -40px -40px;
+    }
+    
+    .expert-image-2 {
+        margin: -70px -60px -60px -60px;
+    }
+    
+    .footer-logo {
+        width: 47%;
+    }
+    
+    .wave-divider svg {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-section {
+        padding: 50px 0 0;
+    }
+    
+    .procrastination-section, .about-section {
+        padding: 20px 0 100px;
+    }
+    
+    .wave-divider svg {
+        height: 40px;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: auto;
+        padding: 80px 0;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .about-section .row {
+        flex-direction: column-reverse;
+    }
+}
+
+/* Botão Voltar para Projetos */
+.return-to-projects-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #17a2b8, #0056b3);
+    text-align: center;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.15);
+}
+
+.return-to-projects-btn {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 8px 30px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.12);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    position: relative;
+    max-width: 100%;
+}
+
+.return-to-projects-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.land-logo-btn {
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 0;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.return-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1.05rem;
+}
+
+.return-to-projects-btn i {
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.return-to-projects-btn:hover i {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .return-text {
+        font-size: 0.95rem;
+    }
+    
+    .land-logo-btn {
+        height: 45px;
+        margin-left: 15px;
+        margin-right: 0;
+    }
+    
+    .return-to-projects-bar {
+        padding: 12px 0;
+    }
+    
+    .return-to-projects-btn {
+        padding: 10px 15px;
+        width: 100%;
+        max-width: 350px;
+        font-size: 0.95rem;
+    }
+}

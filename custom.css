@@ -1,0 +1,774 @@
+/* Correção para a cor do texto na seção FAQ no tema escuro */
+[data-theme="dark"] .faq-section .section-header p {
+    color: #1a2d5e !important;
+} 
+
+/* Correção para a cor do texto nos cards de métricas no tema escuro */
+[data-theme="dark"] .metric-card p {
+    color: #1a2d5e !important;
+}
+
+[data-theme="dark"] .depoimentos-section .metric-card p {
+    color: #1a2d5e !important;
+} 
+
+/* Correções para o menu de navegação no tema escuro */
+[data-theme="dark"] .navbar-toggler-icon:before,
+[data-theme="dark"] .navbar-toggler-icon:after,
+[data-theme="dark"] .navbar-toggler-icon span {
+    background-color: var(--text-white);
+}
+
+[data-theme="dark"] .navbar {
+    transition: background-color 0.5s ease;
+}
+
+/* Ajustes para a onda do topo da seção processo */
+.processo-section {
+    position: relative;
+    overflow: visible !important;
+}
+
+.processo-section .wave-divider {
+    pointer-events: none;
+}
+
+/* Ajuste para o tema escuro */
+[data-theme="dark"] .processo-section .wave-divider svg path {
+    fill: #ffffff !important;
+}
+
+/* Ajustes gerais para a seção de processo */
+.processo-timeline {
+    padding-top: 20px !important;
+    margin-bottom: 30px !important;
+}
+
+/* Correção para os cards da seção Processo nos temas claro e escuro */
+.processo-item {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    transition: all 0.4s ease !important;
+    padding: 30px 25px !important;
+    margin-top: 30px !important;
+}
+
+.processo-item h3 {
+    color: #1a2d5e !important;
+    font-weight: 600 !important;
+    margin-top: 10px !important;
+}
+
+.processo-item p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+}
+
+.processo-feature {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    transition: all 0.4s ease !important;
+    padding: 25px !important;
+}
+
+.feature-content h4 {
+    color: #1a2d5e !important;
+    font-weight: 600 !important;
+}
+
+.feature-content p {
+    color: #4a5568 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Melhorando a aparência dos números e ícones */
+.processo-numero {
+    background: linear-gradient(135deg, #4a6bff, #4ecdc4) !important;
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.4) !important;
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+.processo-icon {
+    color: #4a6bff !important;
+    filter: drop-shadow(0 3px 6px rgba(74, 107, 255, 0.3)) !important;
+    margin: 15px 0 !important;
+    font-size: 2.8rem !important;
+}
+
+.feature-icon {
+    background: linear-gradient(135deg, #4a6bff, #4ecdc4) !important;
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3) !important;
+    min-width: 55px !important;
+    height: 55px !important;
+}
+
+/* Ajustando a linha de conexão entre os itens */
+.processo-line {
+    background: linear-gradient(to right, #4a6bff, #4ecdc4) !important;
+    height: 3px !important;
+    box-shadow: 0 2px 6px rgba(74, 107, 255, 0.3) !important;
+    z-index: 0 !important;
+}
+
+/* Hover states para os cards da seção Processo */
+.processo-item:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
+    border-bottom: 3px solid #4a6bff !important;
+    transform: translateY(-10px) !important;
+}
+
+.processo-feature:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+    border-left: 3px solid #4a6bff !important;
+    transform: translateX(5px) !important;
+}
+
+.processo-item:hover .processo-icon {
+    color: #4ecdc4 !important;
+    transform: scale(1.2) !important;
+}
+
+/* Ajustes para o hover do menu no tema escuro */
+[data-theme="dark"] .nav-item .nav-link.active {
+    color: var(--primary-light);
+    font-weight: 600;
+    position: relative;
+}
+
+[data-theme="dark"] .nav-item .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--primary-light);
+    border-radius: 5px;
+}
+
+/* Adicionar sublinhado e destaque para o tema claro também */
+.nav-item .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-item .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Estilos específicos para sobrescrever os estilos padrão do header */
+
+/* Ajustar a exibição das logos no tema claro */
+.logo-light {
+    display: none;
+}
+
+.logo-dark {
+    display: block;
+}
+
+/* Quando no topo no tema claro, usar logo escura (invertendo a lógica anterior) */
+.navbar:not(.scrolled) .logo-light {
+    display: none;
+}
+
+.navbar:not(.scrolled) .logo-dark {
+    display: block;
+}
+
+/* Após scroll no tema claro, usar logo escura (mantendo a lógica anterior) */
+.navbar.scrolled .logo-light {
+    display: none;
+}
+
+.navbar.scrolled .logo-dark {
+    display: block;
+}
+
+/* Tema escuro - sempre usar logo branca, independente do scroll */
+[data-theme="dark"] .logo-light {
+    display: block !important;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: none !important;
+}
+
+/* Correção adicional para garantir a logo correta no tema escuro */
+[data-theme="dark"] .navbar.scrolled .logo-light {
+    display: block !important;
+}
+
+[data-theme="dark"] .navbar.scrolled .logo-dark {
+    display: none !important;
+}
+
+[data-theme="dark"] .navbar:not(.scrolled) .logo-light {
+    display: block !important;
+}
+
+[data-theme="dark"] .navbar:not(.scrolled) .logo-dark {
+    display: none !important;
+}
+
+/* Correção para a cor do texto na seção FAQ no tema escuro */
+[data-theme="dark"] .faq-section .section-header p {
+    color: #1a2d5e !important;
+}
+
+/* Ajuste para o contraste do toggle de menu no tema escuro */
+[data-theme="dark"] .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+}
+
+/* Melhorias para o menu mobile */
+@media (max-width: 991.98px) {
+    /* Garantir que os estilos de link no menu mobile funcionem corretamente */
+    .navbar-collapse .nav-link {
+        color: var(--text-white) !important;
+    }
+    
+    .navbar-collapse .nav-link:hover::after,
+    .navbar-collapse .nav-link.active::after {
+        opacity: 0 !important; /* Remover sublinhado no mobile */
+    }
+    
+    .navbar-collapse .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 70%;
+        background: #fff;
+        border-radius: 0 3px 3px 0;
+    }
+    
+    /* Ajuste para logos no menu mobile apenas para o tema claro */
+    body:not([data-theme="dark"]) .navbar:not(.scrolled) .logo-light,
+    body:not([data-theme="dark"]) .navbar.scrolled .logo-light {
+        display: none;
+    }
+    
+    body:not([data-theme="dark"]) .navbar:not(.scrolled) .logo-dark,
+    body:not([data-theme="dark"]) .navbar.scrolled .logo-dark {
+        display: block;
+    }
+    
+    /* Não modificar logos no tema escuro */
+    
+    /* Animação de entrada do menu */
+    .navbar-collapse.collapsing {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    
+    .navbar-collapse.show {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    /* Indicador de menu ativo */
+    .navbar-nav .nav-link.active {
+        position: relative;
+        font-weight: 600;
+    }
+    
+    .navbar-nav .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 70%;
+        background: #fff;
+        border-radius: 0 3px 3px 0;
+    }
+    
+    /* Melhor feedback visual para o hover */
+    .navbar-nav .nav-link {
+        transition: all 0.2s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        padding-left: 1.5rem !important;
+    }
+    
+    /* Ajuste para o container do navbar */
+    .navbar > .container {
+        position: relative;
+    }
+    
+    /* Ajuste para a cor e sombra na versão mobile */
+    .navbar-collapse {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    [data-theme="dark"] .navbar-collapse {
+        background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important;
+    }
+    
+    /* Melhor visualização dos ícones */
+    .navbar-nav .nav-link i {
+        width: 24px;
+        text-align: center;
+        margin-right: 8px;
+        font-size: 1rem;
+    }
+    
+    /* Melhorias para o botão de tema no mobile */
+    .theme-switch-wrapper {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .theme-switch-wrapper::before {
+        content: 'Alternar tema';
+        color: rgba(255, 255, 255, 0.8);
+        margin-right: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .theme-switch {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease;
+    }
+    
+    .theme-switch:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+    
+    /* Adicionar animação de entrada para os itens do menu */
+    .navbar-nav .nav-item {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 0.4s forwards;
+    }
+    
+    .navbar-nav .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .navbar-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
+    .navbar-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
+    .navbar-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 575.98px) {
+    /* Ajustar a informação do tema em telas pequenas */
+    .theme-switch-wrapper::before {
+        display: none;
+    }
+    
+    .theme-switch-wrapper::after {
+        content: 'Tema';
+        color: rgba(255, 255, 255, 0.8);
+        margin-left: 10px;
+        font-size: 0.8rem;
+    }
+    
+    /* Melhorar visualização dos cards em telas muito pequenas */
+    .beneficio-card,
+    .plano-card {
+        padding: 25px 20px !important;
+        border-radius: 15px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    /* Ajustar tamanho dos textos */
+    .beneficio-card h3,
+    .plano-card h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .beneficio-card p,
+    .plano-card p,
+    .plano-features li {
+        font-size: 0.95rem !important;
+    }
+    
+    /* Aumentar espaçamento entre cards */
+    .beneficios-section .col-md-4,
+    .planos-section .col-md-4 {
+        margin-bottom: 35px !important;
+    }
+    
+    /* Ajustar tamanho dos ícones */
+    .beneficio-card .card-icon {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.3rem !important;
+    }
+    
+    /* Melhorar visualização dos preços */
+    .valor {
+        font-size: 2.2rem !important;
+    }
+    
+    .periodo {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Reduzir ainda mais a amplitude da animação e ajustar posições */
+    @keyframes float-xs {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-5px) rotate(1deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    .hero-image img {
+        animation: float-xs 3s ease-in-out infinite !important;
+        transform: scale(0.95);
+    }
+    
+    .floating-element {
+        animation: float-xs 3s ease-in-out infinite !important;
+        animation-delay: 0.3s !important;
+        bottom: 10px !important;
+        right: 5px !important;
+        transform: scale(0.85);
+    }
+    
+    /* Ajuste adicional para o hero-image */
+    .hero-image {
+        margin-top: 15px;
+    }
+    
+    /* Ajustes nos shapes para telas pequenas */
+    .shape-1 {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    
+    .shape-2 {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
+
+/* Ajustes de espaçamento entre cards no mobile */
+@media (max-width: 767.98px) {
+    /* Aumentar espaçamento entre os cards de benefícios */
+    .beneficios-section .col-md-4 {
+        margin-bottom: 30px;
+    }
+    
+    .beneficios-section .beneficio-card {
+        height: auto;
+        margin-bottom: 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Aumentar espaçamento entre os cards de planos */
+    .planos-section .col-md-4 {
+        margin-bottom: 40px;
+    }
+    
+    .planos-section .plano-card {
+        height: auto;
+        margin-bottom: 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Ajustar o card popular para não ficar desalinhado em mobile */
+    .planos-section .plano-card.popular {
+        transform: scale(1);
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .planos-section .plano-card.popular:hover {
+        transform: scale(1) translateY(-10px);
+    }
+    
+    /* Espaçamento maior nas colunas */
+    .container .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .container .row > [class*="col-"] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Ajuste nos espaçamentos das colunas para maiores margens entre cards */
+    .beneficios-section .row,
+    .planos-section .row {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    
+    .beneficios-section .row > [class*="col-"],
+    .planos-section .row > [class*="col-"] {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Corrigir comportamento dos cards em tablets */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        .beneficios-section .row,
+        .planos-section .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .beneficios-section .col-md-4,
+        .planos-section .col-md-4 {
+            flex: 0 0 80%;
+            max-width: 80%;
+            margin-bottom: 30px;
+        }
+    }
+    
+    /* Animação reduzida para o mobile */
+    @keyframes float-mobile {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(2deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    /* Aplicar a animação mais suave para notebook e elemento flutuante */
+    .hero-image img {
+        animation: float-mobile 4s ease-in-out infinite !important;
+    }
+    
+    .floating-element {
+        animation: float-mobile 3.5s ease-in-out infinite !important;
+        animation-delay: 0.5s !important;
+        /* Ajustar posição para não encostar no texto */
+        bottom: 15px !important;
+        right: 10px !important;
+    }
+    
+    /* Ajustar o tamanho do elemento flutuante e seu conteúdo */
+    .device-frame {
+        padding: 10px !important;
+    }
+    
+    .device-mockup {
+        gap: 6px !important;
+    }
+    
+    .device-mockup i {
+        font-size: 1rem !important;
+    }
+    
+    .device-mockup p {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Adicionar espaço entre o header e a seção hero no mobile */
+    .hero-section {
+        padding-top: 130px !important; /* Aumentando o padding superior para criar espaço */
+    }
+    
+    /* Ajuste adicional para a seção de contato */
+    .contact-hero {
+        padding-top: 140px !important;
+    }
+}
+
+/* Ajustes específicos para tablets */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    /* Posicionamento ajustado para tablets */
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    .floating-element {
+        bottom: 20px !important;
+        right: 20% !important;
+    }
+    
+    /* Ajustar tamanho da imagem */
+    .hero-image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Melhorias especiais para tablets entre 768px e 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-content h1 {
+        font-size: 2.8rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Ajustar a posição dos elementos flutuantes */
+    .floating-element {
+        bottom: 30px !important;
+        right: 25% !important;
+    }
+    
+    /* Definir animação intermediária para este tamanho */
+    @keyframes float-tablet {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(3deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    .hero-image img {
+        animation: float-tablet 5s ease-in-out infinite !important;
+    }
+    
+    .floating-element {
+        animation: float-tablet 4.5s ease-in-out infinite !important;
+        animation-delay: 0.8s !important;
+    }
+}
+
+/* Alinhar textos da seção hero no mobile */
+@media (max-width: 767.98px) {
+    .hero-content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+/* Melhorias para o menu e navegação */
+.navbar {
+    /* Removendo a borda inferior */
+    border-bottom: none;
+}
+
+.navbar.scrolled {
+    /* Restaurar configuração original */
+    border-bottom: none;
+    /* Garantir que a sombra seja aplicada corretamente */
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+/* Melhoria para transição da linha sob o item ativo */
+.nav-item .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-item .nav-link:hover::after {
+    left: 16px;
+    right: 16px;
+    opacity: 0.5;
+}
+
+.nav-item .nav-link.active::after {
+    left: 16px;
+    right: 16px;
+    opacity: 1;
+}
+
+[data-theme="dark"] .nav-item .nav-link::after {
+    background: var(--primary-light);
+}
+
+/* Ajuste para o tema escuro - cores específicas */
+[data-theme="dark"] .nav-item .nav-link:hover {
+    color: var(--primary-light);
+}
+
+/* Garantir que os links de navegação tenham o contraste adequado no tema claro no topo */
+.navbar:not(.scrolled) .nav-link {
+    color: var(--text-white);
+}
+
+.navbar:not(.scrolled) .nav-link:hover,
+.navbar:not(.scrolled) .nav-link.active {
+    color: #ffffff;
+}
+
+/* Ajuste para o botão de tema quando está no topo */
+.navbar:not(.scrolled) .theme-switch {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--text-white);
+}
+
+.navbar:not(.scrolled) .theme-switch:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--text-white);
+}
+
+/* Correções para o texto no menu de navegação */
+.navbar-nav .nav-link {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-nav .nav-link.active {
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+.navbar:not(.scrolled) .navbar-nav .nav-link {
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+    text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.1);
+} 

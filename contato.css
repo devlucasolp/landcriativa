@@ -1,0 +1,2671 @@
+/* Estilos tecnológicos para a página de projetos */
+@import '../styles.css';
+/* Animações e efeitos gerais */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(var(--primary-rgb), 0); }
+    100% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animações específicas para o código flutuante */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes codeTyping {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes float-particle {
+    0% { transform: translate(0, 0); opacity: 0.05; }
+    25% { opacity: 0.2; }
+    50% { transform: translate(20px, -20px); opacity: 0.1; }
+    75% { opacity: 0.2; }
+    100% { transform: translate(0, 0); opacity: 0.05; }
+}
+
+/* Animação para os blocos de código */
+@keyframes codeFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* Remover classes antigas que não são mais usadas */
+.hero-code-container,
+.code-block,
+.code-block-1,
+.code-block-2,
+.code-block-3 {
+    display: none !important;
+}
+
+/* Personalização da Hero Section */
+.hero-section {
+    position: relative;
+    padding: 120px 0 180px;
+    overflow: visible;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(var(--primary-rgb), 0.1), transparent 60%);
+    z-index: -1;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.2), transparent 70%);
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Partículas de código para efeito de fundo */
+.code-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.code-particle {
+    position: absolute;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.08);
+    z-index: 1;
+    opacity: 0.5;
+    animation: codeFloat 20s ease-in-out infinite;
+}
+
+[data-theme="light"] .code-particle,
+html:not([data-theme="dark"]) .code-particle {
+    color: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 767px) {
+    .code-particle {
+        font-size: 10px;
+    }
+}
+
+/* Melhorar onda e transição para evitar bugs */
+.hero-section .wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 2;
+}
+
+.hero-section .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+}
+
+/* Responsividade simplificada */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 100px 0 150px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .code-sample {
+        margin-top: 40px;
+        transform: scale(0.9);
+        margin-bottom: 30px;
+        animation: cardFloat 5s ease-in-out infinite;
+    }
+    
+    @keyframes cardFloat {
+        0% { transform: perspective(1200px) rotateY(-1deg) translateY(0); }
+        50% { transform: perspective(1200px) rotateY(-0.5deg) translateY(-8px); }
+        100% { transform: perspective(1200px) rotateY(-1deg) translateY(0); }
+    }
+    
+    /* Mostrar menos linhas de código em mobile - ajustado para mostrar mais linhas */
+    .code-content pre .code-line-number:nth-child(n+4),
+    .code-content pre .code-line-number:nth-child(n+5),
+    .code-content pre .code-line-number:nth-child(n+6),
+    .code-content pre .code-line-number:nth-child(n+7),
+    .code-content pre .code-line-number:nth-child(n+8),
+    .code-content pre .code-line-number:nth-child(n+9),
+    .code-content pre .code-line-number:nth-child(n+10),
+    .code-content pre span:nth-child(n+10),
+    .code-content pre span:nth-child(n+16),
+    .code-content pre span:nth-child(n+19),
+    .code-content pre span:nth-child(n+22),
+    .code-content pre span:nth-child(n+27) {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .code-content pre {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .hero-section .wave-divider {
+        z-index: 10;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 80px 0 150px; /* Aumentar padding bottom */
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .code-sample {
+        transform: scale(0.85);
+        margin-top: 20px;
+        margin-bottom: 60px; /* Mais espaço embaixo */
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        animation: cardFloatMobile 4s ease-in-out infinite;
+    }
+    
+    @keyframes cardFloatMobile {
+        0% { transform: perspective(1000px) rotateY(-0.5deg) translateY(0); }
+        50% { transform: perspective(1000px) rotateY(-0.2deg) translateY(-5px); }
+        100% { transform: perspective(1000px) rotateY(-0.5deg) translateY(0); }
+    }
+    
+    .code-content pre {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .code-header {
+        padding: 10px 15px !important;
+    }
+    
+    /* Forçar a exibição de todas as linhas - remover qualquer display:none */
+    .code-content pre .code-line-number,
+    .code-content pre span {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* REMOVER COMPLETAMENTE qualquer pseudo-elemento que possa estar causando problemas */
+    .code-content pre::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* Forçar posição estável para o code-sample */
+    .col-lg-5 {
+        position: relative;
+    }
+    
+    .code-sample {
+        position: relative;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+    
+    .hero-section .wave-divider {
+        bottom: -2px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-section {
+        padding: 60px 0 140px; /* Aumentar padding bottom */
+    }
+    
+    .code-sample {
+        position: relative;
+        transform: scale(0.75);
+        margin-top: 0;
+        margin-bottom: 70px;
+        max-width: 100%;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        z-index: 5;
+        max-height: 300px;
+        animation-play-state: paused; /* Desativar animação em telas muito pequenas */
+    }
+    
+    @keyframes cardFloatSmall {
+        0%, 50%, 100% { 
+            transform: scale(0.7) translateY(0); 
+        }
+    }
+    
+    .code-content {
+        padding: 5px;
+        min-height: 180px;
+        max-height: none !important;
+        overflow: hidden !important;
+    }
+    
+    .code-content pre {
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* Mostrar apenas as 7 primeiras linhas em telefones pequenos */
+    .code-content pre .code-line-number:nth-child(n+8),
+    .code-content pre span:nth-child(n+22) {
+        display: none !important;
+    }
+    
+    /* Adicionar indicação de código truncado */
+    .code-content pre::after {
+        content: "...";
+        display: block;
+        color: #888;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    
+    /* Simplificar as estatísticas do código */
+    .code-stats {
+        padding: 5px 10px !important;
+    }
+    
+    .code-stat-item i {
+        font-size: 0.9rem !important;
+    }
+    
+    .code-stat-item span {
+        font-size: 0.75rem !important;
+    }
+    
+    /* Simplificar o header do código */
+    .code-dot {
+        width: 8px !important;
+        height: 8px !important;
+    }
+    
+    .code-title {
+        font-size: 0.8rem !important;
+    }
+    
+    .code-header {
+        padding: 6px 12px !important;
+    }
+    
+    /* Ajuste na onda para garantir que não haja sobreposição */
+    .hero-section .wave-divider {
+        bottom: -2px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .code-sample {
+        transform: scale(0.63);
+        margin-bottom: 110px;
+        animation: none; /* Remover animação completamente */
+    }
+    
+    .code-content {
+        max-height: 160px !important;
+    }
+    
+    .hero-section {
+        padding: 60px 0 160px; /* Ainda mais padding para dispositivos muito pequenos */
+    }
+}
+
+/* Ajustes adicionais para desktops grandes */
+@media (min-width: 1200px) {
+    .code-sample {
+        max-width: 90%;
+        margin-left: auto;
+    }
+}
+
+/* Portfolio Section com estilo tech */
+.portfolio-section {
+    position: relative;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.portfolio-section .wave-divider {
+    display: block;
+    line-height: 0;
+    font-size: 0;
+    margin-bottom: -1px !important;
+    position: relative;
+    z-index: 5;
+}
+
+.portfolio-section .wave-divider svg {
+    display: block;
+    width: 100%;
+}
+
+/* Azul exato para a onda */
+.portfolio-section .wave-divider svg path {
+    fill: #0d3b66 !important;
+    fill-opacity: 1 !important;
+}
+
+[data-theme="dark"] .portfolio-section .wave-divider svg path {
+    fill: #153a5f !important;
+}
+
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.filter-btn::before {
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card:hover .portfolio-img img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.portfolio-overlay {
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.9), rgba(var(--accent-rgb), 0.9));
+    backdrop-filter: blur(5px);
+}
+
+.portfolio-card:hover .overlay-icon {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Cores e variáveis específicas para sincronização entre ondas e seções */
+:root {
+    --tecnologia-bg-light: #0d3b66;
+    --tecnologia-bg-dark: #153a5f;
+}
+
+/* Seção de Tecnologias - ajustes críticos */
+.tecnologias-section {
+    position: relative;
+    overflow: visible;
+    background-color: var(--tecnologia-bg-light);
+    color: #ffffff;
+    padding: 80px 0 160px;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    z-index: 1;
+}
+
+[data-theme="dark"] .tecnologias-section {
+    background-color: var(--tecnologia-bg-dark);
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+.tecnologias-section .section-header h2, 
+.tecnologias-section .section-header p {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Título da seção com destaque */
+.tecnologias-section .section-header h2 .gradient-text {
+    background: linear-gradient(135deg, #5edfff, #80ffdb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Removendo qualquer sombra que possa estar causando divisão visível */
+.tecnologias-section::after,
+.tecnologias-section::before {
+    display: none !important;
+}
+
+.tecnologias-section .wave-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    line-height: 0;
+}
+
+/* Garantindo que os elementos superiores da seção de tecnologias fiquem acima da onda do portfolio */
+.tecnologias-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Melhorar descrição da seção */
+.tecnologias-section .tech-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Adicionar contador para os itens */
+.tech-item-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    z-index: 2;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+@media (max-width: 991px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Adicionar animação de entrada para os itens da seção de tecnologias */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tech-item {
+    position: relative;
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15); /* Aumentado o contraste */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.tech-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.tech-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Garantir que os textos de parágrafo nos tech-items são legíveis */
+[data-theme="dark"] .tech-item p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.tech-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tech-item:hover::before {
+    opacity: 1;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+    transition: all 0.4s ease;
+}
+
+/* Adicionar efeito de brilho aos elementos quando estão em hover */
+.tech-item:hover .tech-icon {
+    transform: scale(1.15);
+    color: #5edfff; /* Cor mais vibrante no hover */
+    filter: drop-shadow(0 0 10px rgba(94, 223, 255, 0.6));
+}
+
+/* Variações de cores para diferentes itens de tecnologia */
+.tech-item:nth-child(3n+1) .tech-icon {
+    color: #80ffdb;
+}
+
+.tech-item:nth-child(3n+2) .tech-icon {
+    color: #5edfff;
+}
+
+.tech-item:nth-child(3n+3) .tech-icon {
+    color: #a2d2ff;
+}
+
+.tech-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tech-tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 0 16px 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}
+
+.tech-item:hover .tech-tooltip {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* Seção de Métricas estilizada */
+.metric-card {
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    transition: height 0.5s ease;
+}
+
+.metric-card:hover::before {
+    height: 100%;
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.metric-card:hover .metric-icon {
+    transform: scale(1.15) rotate(10deg);
+    color: var(--accent-color);
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+}
+
+/* Tema escuro para os cards de métricas */
+[data-theme="dark"] .metric-card p {
+    color: #1a2d5e; /* Azul escuro para manter a consistência com o restante do site no tema escuro */
+}
+
+/* Processo Section */
+.processo-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.processo-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        linear-gradient(45deg, rgba(var(--primary-rgb), 0.03) 25%, transparent 25%), 
+        linear-gradient(-45deg, rgba(var(--primary-rgb), 0.03) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, rgba(var(--primary-rgb), 0.03) 75%), 
+        linear-gradient(-45deg, transparent 75%, rgba(var(--primary-rgb), 0.03) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    z-index: 0;
+}
+
+.processo-timeline {
+    position: relative;
+    margin-top: 60px;
+}
+
+.processo-item {
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.processo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.processo-numero {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    z-index: 2;
+}
+
+.processo-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 20px 0;
+    transition: all 0.4s ease;
+}
+
+.processo-item:hover .processo-icon {
+    transform: scale(1.15);
+    color: var(--accent-color);
+}
+
+.processo-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.processo-line {
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    top: 50%;
+    right: -15%;
+    width: 30%;
+    z-index: 0;
+}
+
+@media (max-width: 991px) {
+    .processo-line {
+        display: none;
+    }
+}
+
+.processo-features {
+    margin-top: 80px;
+}
+
+.processo-feature {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    margin-bottom: 20px;
+}
+
+.processo-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+}
+
+.processo-feature:hover .feature-icon {
+    transform: rotate(360deg);
+}
+
+.feature-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.feature-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    .processo-item {
+        margin-bottom: 50px;
+    }
+    
+    .processo-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Elementos tecnológicos adicionais */
+.tech-subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(74, 107, 255, 0.25), rgba(78, 205, 196, 0.25));
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tech-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(74, 107, 255, 0.4), rgba(78, 205, 196, 0.4));
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tech-tag i {
+    margin-right: 5px;
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Adicionar efeito de brilho em volta dos tags */
+.tech-tag::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.tech-tag:hover::before {
+    opacity: 1;
+}
+
+/* Animações adicionais */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary-color);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeitos de Partículas e Background */
+.particle-effect {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    opacity: 0.5;
+    animation: float-particle 15s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: translate(100px, -100px); opacity: 0; }
+}
+
+/* Card com efeito de vidro para seções tecnológicas */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
+}
+
+/* Efeitos de Partículas e Background */
+.tech-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle-effect {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.5);
+}
+
+.particle-effect:nth-child(odd) {
+    animation: float-particle-1 15s infinite ease-in-out;
+}
+
+.particle-effect:nth-child(even) {
+    animation: float-particle-2 20s infinite ease-in-out;
+}
+
+.particle-effect:nth-child(3n) {
+    width: 12px;
+    height: 12px;
+    animation: float-particle-3 25s infinite ease-in-out;
+}
+
+@keyframes float-particle-1 {
+    0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+    25% { opacity: 0.5; }
+    50% { transform: translate(100px, -100px) scale(1.2); opacity: 0.7; }
+    75% { opacity: 0.3; }
+    100% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+}
+
+@keyframes float-particle-2 {
+    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+    25% { transform: translate(-50px, 80px) scale(0.8); opacity: 0.6; }
+    50% { opacity: 0.3; }
+    75% { transform: translate(80px, 30px) scale(1.2); opacity: 0.5; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0; }
+}
+
+@keyframes float-particle-3 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(0.5); opacity: 0; }
+    30% { opacity: 0.7; }
+    60% { transform: translate(-120px, -50px) rotate(180deg) scale(1.5); opacity: 0.3; }
+    100% { transform: translate(0, 0) rotate(360deg) scale(0.5); opacity: 0; }
+}
+
+/* Estilos para seção de tecnologias usadas em cada projeto */
+.tech-used {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.tech-used span {
+    display: inline-block;
+    padding: 3px 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.tecnologias-section .wave-divider svg path {
+    fill: var(--tecnologia-bg-light) !important;
+    fill-opacity: 1 !important;
+    transition: fill 0.3s ease;
+}
+
+[data-theme="dark"] .tecnologias-section .wave-divider svg path {
+    fill: var(--tecnologia-bg-dark) !important;
+    fill-opacity: 1 !important;
+}
+
+/* Adicionando um brilho decorativo na seção para dar mais profundidade */
+.tecnologias-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 15%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 15%);
+    z-index: 0;
+}
+
+/* Melhorando o efeito antes/depois para o tema escuro */
+[data-theme="dark"] .tecnologias-section::before {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(94, 223, 255, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(128, 255, 219, 0.03) 0%, transparent 25%);
+}
+
+[data-theme="dark"] .tecnologias-section::after {
+    background: radial-gradient(circle, rgba(94, 223, 255, 0.05) 0%, transparent 70%);
+}
+
+.tech-item:nth-child(1) { animation-delay: 0.1s; }
+.tech-item:nth-child(2) { animation-delay: 0.2s; }
+.tech-item:nth-child(3) { animation-delay: 0.3s; }
+.tech-item:nth-child(4) { animation-delay: 0.4s; }
+.tech-item:nth-child(5) { animation-delay: 0.5s; }
+.tech-item:nth-child(6) { animation-delay: 0.6s; }
+.tech-item:nth-child(7) { animation-delay: 0.7s; }
+.tech-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* Classe de destaque para os tech items */
+.tech-highlight {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    z-index: 10;
+}
+
+.tech-highlight .tech-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px rgba(94, 223, 255, 0.8));
+}
+
+.tech-highlight .tech-item-count {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Garantindo que a onda do portfolio tenha a mesma cor exata */
+.portfolio-section .wave-divider svg path {
+    fill: var(--tecnologia-bg-light) !important;
+    fill-opacity: 1 !important;
+    transition: fill 0.3s ease;
+}
+
+/* Tema escuro */
+[data-theme="dark"] .portfolio-section .wave-divider svg path {
+    fill: var(--tecnologia-bg-dark) !important;
+    fill-opacity: 1 !important;
+}
+
+/* Adicionando script para sincronizar as cores exatamente */
+@media (scripting: enabled) {
+    [data-theme="dark"] .portfolio-section .wave-divider svg path {
+        fill: var(--tecnologias-bg-dark, #153a5f) !important;
+    }
+}
+
+/* Ajuste para a onda da seção de tecnologias */
+.tecnologias-section .wave-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    line-height: 0;
+}
+
+/* Código completamente refeito para melhor visualização em mobile */
+.code-sample {
+    position: relative;
+    background: #1e2130;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: visible;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: none;
+    animation: none;
+}
+
+.code-header {
+    background: linear-gradient(to right, #252a3d, #1e2638);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.code-dot:nth-child(1) { background-color: #ff5f57; }
+.code-dot:nth-child(2) { background-color: #febc2e; }
+.code-dot:nth-child(3) { background-color: #28c840; }
+
+.code-title {
+    color: #e6e6e6;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    margin-left: 10px;
+    opacity: 0.7;
+}
+
+.code-content {
+    padding: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.code-content pre {
+    padding: 15px !important;
+    white-space: pre-wrap !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    display: block !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+}
+
+/* Forçar exibição de TODAS as linhas */
+.code-content pre .code-line-number,
+.code-content pre span {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Remover qualquer regra que possa estar escondendo linhas */
+@media (max-width: 991px) {
+    .code-line-number:nth-child(n+4),
+    .code-line-number:nth-child(n+5),
+    .code-line-number:nth-child(n+6),
+    .code-line-number:nth-child(n+7),
+    .code-line-number:nth-child(n+8),
+    .code-line-number:nth-child(n+9),
+    .code-line-number:nth-child(n+10) {
+        display: inline-block !important;
+    }
+    
+    .code-sample {
+        transform: none !important;
+        animation: none !important;
+        margin: 20px auto 40px !important;
+    }
+    
+    .code-content {
+        min-height: auto !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .code-content pre::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    .code-content pre {
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .code-content pre {
+        font-size: 10px !important;
+    }
+}
+
+/* Remover qualquer another regra que possa estar afetando a visibilidade */
+.code-content pre .code-line-number:nth-child(n+8),
+.code-content pre span:nth-child(n+22) {
+    display: inline-block !important;
+}
+
+.code-stats {
+    background: rgba(20, 23, 34, 0.8);
+    padding: 10px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 10px 10px;
+}
+
+.code-stat-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.code-stat-item:last-child {
+    margin-bottom: 0;
+}
+
+.code-stat-item i {
+    color: #5edfff;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.code-stat-item span {
+    color: #e6e6e6;
+    font-size: 11px;
+    margin-right: 10px;
+    font-weight: 500;
+    min-width: 65px;
+}
+
+.code-stat-bar {
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.code-stat-fill {
+    height: 100%;
+    background: linear-gradient(to right, #5edfff, #80ffdb);
+    border-radius: 3px;
+    width: 0;
+    animation: fillBar 1.5s forwards;
+}
+
+/* Cores de sintaxe */
+.code-comment { color: #6cc265; }
+.code-keyword { color: #d670d6; }
+.code-variable { color: #5cebdf; }
+.code-property { color: #9cdcfe; }
+.code-string { color: #f88070; }
+.code-function { color: #f8d785; }
+.code-boolean { color: #61afef; }
+
+/* Animação para as barras de estatísticas */
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: 95%; }
+}
+
+/* Media queries simplificadas */
+@media (min-width: 992px) {
+    .code-sample {
+        transform: perspective(1200px) rotateY(-2deg);
+        transition: transform 0.5s ease;
+    }
+    
+    .code-sample:hover {
+        transform: perspective(1200px) rotateY(0);
+    }
+    
+    .code-content pre {
+        font-size: 14px;
+    }
+    
+    .code-line-number {
+        font-size: 12px;
+        width: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding-bottom: 120px;
+    }
+    
+    .code-sample {
+        margin: 10px auto 30px;
+    }
+    
+    .code-header {
+        padding: 6px 10px;
+    }
+    
+    .code-content pre {
+        padding: 10px;
+        font-size: 11px;
+        line-height: 1.3;
+    }
+    
+    .code-line-number {
+        width: 16px;
+        font-size: 10px;
+        margin-right: 4px;
+    }
+}
+
+@media (max-width: 575px) {
+    .code-content pre {
+        font-size: 10px;
+        line-height: 1.2;
+        padding: 8px;
+    }
+    
+    .code-line-number {
+        width: 14px;
+        font-size: 9px;
+        margin-right: 3px;
+    }
+    
+    .code-stats {
+        padding: 8px 10px;
+    }
+    
+    .code-stat-item {
+        margin-bottom: 6px;
+    }
+    
+    .code-stat-item i {
+        font-size: 10px;
+    }
+    
+    .code-stat-item span {
+        font-size: 9px;
+        min-width: 55px;
+        margin-right: 5px;
+    }
+}
+
+/* Tema claro para o código flutuante */
+[data-theme="light"] .code-sample {
+    background: #f5f5f7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .code-header {
+    background: linear-gradient(to right, #e8e8ed, #f0f0f5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .code-title {
+    color: #333;
+    opacity: 0.8;
+}
+
+[data-theme="light"] .code-content pre {
+    color: #333;
+    background: transparent;
+}
+
+/* Cores de sintaxe para tema claro */
+[data-theme="light"] .code-comment { color: #008000; }
+[data-theme="light"] .code-keyword { color: #a31db1; }
+[data-theme="light"] .code-variable { color: #0070c1; }
+[data-theme="light"] .code-property { color: #0070c1; }
+[data-theme="light"] .code-string { color: #d14; }
+[data-theme="light"] .code-function { color: #795e26; }
+[data-theme="light"] .code-boolean { color: #0000ff; }
+
+[data-theme="light"] .code-stats {
+    background: rgba(240, 240, 245, 0.9);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .code-stat-item i {
+    color: #0078d4;
+}
+
+[data-theme="light"] .code-stat-item span {
+    color: #333;
+}
+
+[data-theme="light"] .code-stat-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .code-stat-fill {
+    background: linear-gradient(to right, #0078d4, #3a96dd);
+}
+
+[data-theme="light"] .code-particle {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo para o bloco de código */
+.code-block {
+    display: block;
+    white-space: pre-wrap;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px;
+    color: #e0e0e0;
+    background: transparent;
+}
+
+[data-theme="light"] .code-block {
+    color: #333;
+}
+
+@media (max-width: 767px) {
+    .code-block {
+        font-size: 11px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .code-block {
+        font-size: 10px;
+        padding: 10px;
+    }
+}
+
+/* Compatibilidade adicional para modo claro */
+html:not([data-theme="dark"]) .code-sample {
+    background: #f5f5f7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+html:not([data-theme="dark"]) .code-header {
+    background: linear-gradient(to right, #e8e8ed, #f0f0f5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+html:not([data-theme="dark"]) .code-title {
+    color: #333;
+    opacity: 0.8;
+}
+
+html:not([data-theme="dark"]) .code-content pre,
+html:not([data-theme="dark"]) .code-block {
+    color: #333;
+    background: transparent;
+}
+
+/* Cores de sintaxe para tema claro - compatibilidade adicional */
+html:not([data-theme="dark"]) .code-comment { color: #008000; }
+html:not([data-theme="dark"]) .code-keyword { color: #a31db1; }
+html:not([data-theme="dark"]) .code-variable { color: #0070c1; }
+html:not([data-theme="dark"]) .code-property { color: #0070c1; }
+html:not([data-theme="dark"]) .code-string { color: #d14; }
+html:not([data-theme="dark"]) .code-function { color: #795e26; }
+html:not([data-theme="dark"]) .code-boolean { color: #0000ff; }
+
+html:not([data-theme="dark"]) .code-stats {
+    background: rgba(240, 240, 245, 0.9);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+html:not([data-theme="dark"]) .code-stat-item i {
+    color: #0078d4;
+}
+
+html:not([data-theme="dark"]) .code-stat-item span {
+    color: #333;
+}
+
+html:not([data-theme="dark"]) .code-stat-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+html:not([data-theme="dark"]) .code-stat-fill {
+    background: linear-gradient(to right, #0078d4, #3a96dd);
+}
+
+html:not([data-theme="dark"]) .code-particle {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos específicos para a página de contato */
+
+/* Reset geral para eliminar espaçamentos entre seções */
+body {
+    background-color: var(--bg-light);
+}
+
+section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Seção Hero de Contato - Agora com o formulário */
+.contact-hero {
+    padding: 150px 0 100px;
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content {
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #ffffff !important;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.contact-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-highlight-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .contact-highlight-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-highlight-item:hover {
+    transform: translateX(5px);
+    background: #f0f0f0;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .contact-highlight-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.highlight-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-text h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text-color);
+}
+
+.highlight-text p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    opacity: 0.9;
+    color: var(--text-muted);
+}
+
+/* Informações de contato compactas (apenas para mobile) */
+.contact-details {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* NOVO FORMULÁRIO DE CONTATO - Reformulado */
+.contact-form-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .contact-form-container {
+    background: rgba(30, 32, 44, 0.8);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Adicionar propriedades para prevenir seleção de texto em elementos não editáveis */
+.contact-form .form-floating label,
+.contact-form .form-floating i,
+.contact-form .form-check-label,
+.contact-form button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+/* Adicionar estilos para tornar placeholders não selecionáveis */
+::placeholder {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    cursor: text !important;
+    opacity: 0.7;
+}
+
+/* Firefox */
+::-moz-placeholder {
+    user-select: none !important;
+    -moz-user-select: none !important;
+    cursor: text !important;
+    opacity: 0.7;
+}
+
+/* WebKit browsers */
+::-webkit-input-placeholder {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    cursor: text !important;
+    opacity: 0.7;
+}
+
+/* Edge */
+::-ms-input-placeholder {
+    user-select: none !important;
+    -ms-user-select: none !important;
+    cursor: text !important;
+    opacity: 0.7;
+}
+
+.contact-form .form-control,
+.contact-form .form-select,
+.contact-form .form-check-input {
+    cursor: text;
+}
+
+.contact-form .form-select,
+.contact-form .form-check-input,
+.contact-form button {
+    cursor: pointer;
+}
+
+.contact-form .form-floating {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    height: 58px;
+    border-radius: 12px;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: none;
+    outline: none !important;
+}
+
+/* Corrigir bordas no modo escuro */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select {
+    border: 2px solid rgba(30, 32, 44, 0.5);
+    background-color: rgba(20, 22, 34, 0.5);
+    color: #ffffff;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .contact-form .form-control:focus,
+[data-theme="dark"] .contact-form .form-select:focus {
+    border-color: var(--primary-color);
+    background-color: rgba(30, 32, 44, 0.9);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25) !important;
+    outline: none !important;
+}
+
+/* Usar a propriedade appearance para eliminar estilos nativos do browser */
+.contact-form .form-control,
+.contact-form .form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.contact-form textarea.form-control {
+    height: 150px;
+    resize: none;
+    padding-top: 2.5rem;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.15rem rgba(var(--primary-rgb), 0.25);
+    background-color: #ffffff;
+    outline: none !important;
+}
+
+[data-theme="dark"] .contact-form .form-control:focus,
+[data-theme="dark"] .contact-form .form-select:focus {
+    background-color: rgba(30, 32, 44, 0.9);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.15rem rgba(var(--primary-rgb), 0.25);
+    outline: none !important;
+}
+
+.contact-form .form-floating > label {
+    padding: 0.75rem 0 0 3rem;
+    height: 58px;
+    color: var(--text-muted);
+    font-weight: 500;
+    pointer-events: none;
+    transform-origin: left top;
+    transition: all 0.3s ease;
+    background-color: transparent !important; /* Corrigindo o fundo do label */
+    z-index: 5;
+}
+
+[data-theme="dark"] .contact-form .form-floating > label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form .form-floating > .form-control:focus ~ label,
+.contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label,
+.contact-form .form-floating > .form-select ~ label {
+    opacity: 0.8;
+    transform: scale(0.85) translateY(-1rem);
+    color: var(--primary-color);
+    background-color: transparent !important; /* Garantindo que o fundo permanece transparente */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 2.5rem;
+    z-index: 5;
+}
+
+/* Adicionar um pseudo-elemento para o fundo do label quando flutuante */
+.contact-form .form-floating > .form-control:focus ~ label::before,
+.contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+.contact-form .form-floating > .form-select ~ label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: inherit;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+[data-theme="light"] .contact-form .form-floating > .form-control:focus ~ label::before,
+[data-theme="light"] .contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+[data-theme="light"] .contact-form .form-floating > .form-select ~ label::before,
+html:not([data-theme="dark"]) .contact-form .form-floating > .form-control:focus ~ label::before,
+html:not([data-theme="dark"]) .contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+html:not([data-theme="dark"]) .contact-form .form-floating > .form-select ~ label::before {
+    background-color: #ffffff;
+}
+
+[data-theme="dark"] .contact-form .form-floating > .form-control:focus ~ label::before,
+[data-theme="dark"] .contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+[data-theme="dark"] .contact-form .form-floating > .form-select ~ label::before {
+    background-color: rgba(30, 32, 44, 0.8);
+}
+
+/* Remover qualquer borda ou contorno indesejado no modo escuro */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-check-input,
+[data-theme="dark"] .contact-form-container {
+    outline: none !important;
+    outline-offset: 0 !important;
+}
+
+/* Esconder as bordas brancas usando mix-blend-mode */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select {
+    mix-blend-mode: normal !important; /* Substituir darken por normal */
+}
+
+.contact-form .form-floating i {
+    position: absolute;
+    left: 1rem;
+    top: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-floating .form-control:focus ~ i,
+.contact-form .form-floating .form-select:focus ~ i {
+    transform: scale(1.1);
+}
+
+/* Correções adicionais para bordas no modo escuro */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select,
+[data-theme="dark"] .contact-form .form-check-input {
+    border-color: rgba(30, 32, 44, 0.5);
+}
+
+/* Melhorar a visibilidade em tema escuro sem mostrar bordas indesejadas */
+[data-theme="dark"] .contact-form .form-control:focus,
+[data-theme="dark"] .contact-form .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
+}
+
+/* Checkbox estilizado */
+.contact-form .form-check {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-check-input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: -2rem;
+    background-color: #f8f9fa;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .contact-form .form-check-input {
+    background-color: rgba(20, 22, 34, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-form .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.15rem rgba(var(--primary-rgb), 0.25);
+}
+
+.contact-form .form-check-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .contact-form .form-check-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form .form-check-label a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-check-label a:hover {
+    opacity: 0.8;
+}
+
+/* Botão de envio */
+.contact-form .btn-primary {
+    height: 54px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-form .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(var(--primary-rgb), 0.4);
+}
+
+.contact-form .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Links sociais no final do hero */
+.contact-socials {
+    margin-top: auto;
+    padding-top: 50px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* Ocultar/remover elementos decorativos */
+.hero-bg-shapes, 
+.bg-particles, 
+.shape, 
+.tech-particles, 
+.particle-effect,
+.particle {
+    display: none !important;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 991px) {
+    .contact-hero {
+        padding: 120px 0 80px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .contact-form-container {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-hero {
+        padding: 100px 0 70px;
+        min-height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contact-form-container {
+        margin-top: 30px;
+        padding: 20px;
+    }
+    
+    .contact-form .form-control,
+    .contact-form .form-select {
+        height: 52px;
+        font-size: 0.95rem;
+    }
+    
+    .contact-form .form-floating > label {
+        height: 52px;
+        font-size: 0.95rem;
+    }
+    
+    .contact-form .form-floating i {
+        font-size: 1.1rem;
+        top: 1rem;
+    }
+    
+    .contact-form .btn-primary {
+        height: 48px;
+        font-size: 1rem;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-hero {
+        padding: 90px 0 60px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .highlight-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .highlight-text h4 {
+        font-size: 1rem;
+    }
+    
+    .highlight-text p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-form-container {
+        padding: 15px;
+    }
+    
+    .contact-form .form-control,
+    .contact-form .form-select {
+        height: 48px;
+        font-size: 0.9rem;
+        padding-left: 2.5rem;
+    }
+    
+    .contact-form .form-floating > label {
+        height: 48px;
+        font-size: 0.9rem;
+        padding-left: 2.5rem;
+    }
+    
+    .contact-form .form-floating i {
+        font-size: 1rem;
+        left: 0.75rem;
+    }
+    
+    .contact-form textarea.form-control {
+        height: 120px;
+    }
+    
+    .contact-form .btn-primary {
+        height: 44px;
+        font-size: 0.95rem;
+    }
+    
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Solução completa para eliminar as bordas no tema escuro */
+
+/* Redefinir completamente os estilos no tema escuro */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select,
+[data-theme="dark"] .contact-form textarea.form-control {
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(30, 32, 44, 0.7) !important; /* Simular borda com box-shadow */
+    background-color: rgba(20, 22, 34, 0.7) !important;
+    color: #ffffff !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Estado de foco no tema escuro */
+[data-theme="dark"] .contact-form .form-control:focus,
+[data-theme="dark"] .contact-form .form-select:focus,
+[data-theme="dark"] .contact-form textarea.form-control:focus {
+    box-shadow: 0 0 0 2px var(--primary-color) !important; /* Usar cor primária para o foco */
+    background-color: rgba(30, 32, 44, 0.9) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Remover quaisquer estilos de borda aplicados por Bootstrap */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] textarea.form-control {
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    border-image: none !important;
+}
+
+/* Garantir que o outline também seja removido */
+[data-theme="dark"] *:focus {
+    outline: none !important;
+}
+
+/* Eliminar bordas em pseudo-elementos, como :before e :after */
+[data-theme="dark"] .form-control::before,
+[data-theme="dark"] .form-control::after,
+[data-theme="dark"] .form-select::before,
+[data-theme="dark"] .form-select::after {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Garantir que não haja nenhuma borda branca em qualquer elemento do formulário */
+[data-theme="dark"] .contact-form-container *,
+[data-theme="dark"] .contact-form * {
+    border-color: transparent !important;
+}
+
+/* Tentar corrigir qualquer problema específico do navegador */
+@-moz-document url-prefix() {
+    [data-theme="dark"] .contact-form .form-control,
+    [data-theme="dark"] .contact-form .form-select {
+        border: none !important;
+        box-shadow: 0 0 0 2px rgba(30, 32, 44, 0.7) !important;
+    }
+}
+
+/* Correção para Safari/WebKit */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    [data-theme="dark"] .contact-form .form-control,
+    [data-theme="dark"] .contact-form .form-select {
+        border: none !important;
+        box-shadow: 0 0 0 2px rgba(30, 32, 44, 0.7) !important;
+    }
+}
+
+/* Abordagem completamente nova para resolver o problema da borda */
+
+/* Reset completo para o tema escuro */
+[data-theme="dark"] .contact-form-container {
+    background: #1e2035;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Criar uma aparência totalmente personalizada para os campos */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select {
+    /* Remover todos os estilos nativos */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Remover qualquer borda */
+    border: none;
+    outline: none;
+    
+    /* Base sólida para o campo */
+    background-color: #141625;
+    color: #ffffff;
+    
+    /* Adicionar sombra interna para simular borda */
+    box-shadow: inset 0 0 0 2px #2d3142;
+    
+    /* Outros estilos */
+    border-radius: 12px;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1rem;
+    height: 58px;
+    transition: all 0.3s ease;
+}
+
+/* Estado de foco */
+[data-theme="dark"] .contact-form .form-control:focus,
+[data-theme="dark"] .contact-form .form-select:focus {
+    background-color: #191d31;
+    box-shadow: inset 0 0 0 2px var(--primary-color), 0 0 5px rgba(var(--primary-rgb), 0.5);
+}
+
+/* Áreas de texto */
+[data-theme="dark"] .contact-form textarea.form-control {
+    height: 150px;
+    padding-top: 2.5rem;
+    background-color: #141625;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #2d3142;
+    border: none;
+}
+
+[data-theme="dark"] .contact-form textarea.form-control:focus {
+    background-color: #191d31;
+    box-shadow: inset 0 0 0 2px var(--primary-color), 0 0 5px rgba(var(--primary-rgb), 0.5);
+}
+
+/* Sobrescrever estilos de seleção do Bootstrap */
+[data-theme="dark"] .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%235edfff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+}
+
+/* Estilos para labels */
+[data-theme="dark"] .contact-form .form-floating > label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .contact-form .form-floating > .form-control:focus ~ label,
+[data-theme="dark"] .contact-form .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[data-theme="dark"] .contact-form .form-floating > .form-select ~ label {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+/* Remover qualquer estilo de label fundo branco */
+[data-theme="dark"] .contact-form .form-floating > label::before {
+    background-color: transparent !important;
+}
+
+/* Estilos para o checkbox */
+[data-theme="dark"] .contact-form .form-check-input {
+    background-color: #141625;
+    border: none;
+    box-shadow: inset 0 0 0 2px #2d3142;
+}
+
+[data-theme="dark"] .contact-form .form-check-input:checked {
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* Estilos para os elementos personalizados */
+.dark-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.custom-input,
+.custom-select {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Tema claro */
+.custom-input,
+.custom-select {
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+.custom-input:focus,
+.custom-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.15rem rgba(var(--primary-rgb), 0.25);
+}
+
+/* Tema escuro - Implementação completamente nova */
+[data-theme="dark"] .custom-input,
+[data-theme="dark"] .custom-select {
+    /* Reset completo */
+    border: none !important;
+    outline: none !important;
+    background-color: #141625 !important;
+    color: #ffffff !important;
+    
+    /* Nova aparência */
+    box-shadow: inset 0 0 0 2px #2d3142 !important;
+}
+
+[data-theme="dark"] .custom-input:focus,
+[data-theme="dark"] .custom-select:focus {
+    box-shadow: inset 0 0 0 2px var(--primary-color) !important;
+    background-color: #191d31 !important;
+}
+
+/* Correções adicionais para os labels no tema escuro */
+[data-theme="dark"] .dark-input label {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: transparent !important;
+}
+
+[data-theme="dark"] .dark-input label::before {
+    display: none !important;
+}
+
+[data-theme="dark"] .dark-input .form-control:focus ~ label,
+[data-theme="dark"] .dark-input .form-control:not(:placeholder-shown) ~ label,
+[data-theme="dark"] .dark-input .form-select ~ label {
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+}
+
+/* Estilo do checkbox personalizado */
+.custom-check .form-check-input {
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+[data-theme="dark"] .custom-check .form-check-input {
+    background-color: #141625;
+    border: none;
+    box-shadow: inset 0 0 0 2px #2d3142;
+}
+
+[data-theme="dark"] .custom-check .form-check-input:checked {
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* SOLUÇÃO ESPECÍFICA PARA O PROBLEMA DO LABEL FLUTUANTE */
+/* Remover QUALQUER fundo ou borda dos labels quando flutuam */
+[data-theme="dark"] .form-floating > label {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    z-index: 5;
+}
+
+/* Eliminar o pseudo-elemento que causa o fundo branco */
+[data-theme="dark"] .form-floating > .form-control:focus ~ label::before,
+[data-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+[data-theme="dark"] .form-floating > .form-select ~ label::before {
+    display: none !important;
+}
+
+/* Adicionar um novo pseudo-elemento controlado para servir como fundo */
+[data-theme="dark"] .form-floating > .form-control:focus ~ label::after,
+[data-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+[data-theme="dark"] .form-floating > .form-select ~ label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #1e2035 !important; /* Mesma cor de fundo do form container */
+    border-radius: 4px;
+}
+
+/* Estilo específico quando o label flutua para cima */
+[data-theme="dark"] .form-floating > .form-control:focus ~ label,
+[data-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[data-theme="dark"] .form-floating > .form-select ~ label {
+    color: var(--primary-color) !important;
+    padding: 0.25rem 0.5rem !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Garanta que o texto do label não tenha sombra ou outros efeitos indesejados */
+[data-theme="dark"] .form-floating label span,
+[data-theme="dark"] .form-floating label {
+    text-shadow: none !important;
+    -webkit-text-fill-color: currentColor !important;
+} 
+
+/* SOLUÇÃO PARA OS LABELS FLUTUANTES NO TEMA CLARO */
+[data-theme="light"] .form-floating > label,
+html:not([data-theme="dark"]) .form-floating > label {
+    background: transparent !important;
+    z-index: 5;
+}
+
+/* Remover o pseudo-elemento problemático no tema claro também */
+[data-theme="light"] .form-floating > .form-control:focus ~ label::before,
+[data-theme="light"] .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+[data-theme="light"] .form-floating > .form-select ~ label::before,
+html:not([data-theme="dark"]) .form-floating > .form-control:focus ~ label::before,
+html:not([data-theme="dark"]) .form-floating > .form-control:not(:placeholder-shown) ~ label::before,
+html:not([data-theme="dark"]) .form-floating > .form-select ~ label::before {
+    display: none !important;
+}
+
+/* Adicionar novo pseudo-elemento controlado para o fundo no tema claro */
+[data-theme="light"] .form-floating > .form-control:focus ~ label::after,
+[data-theme="light"] .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+[data-theme="light"] .form-floating > .form-select ~ label::after,
+html:not([data-theme="dark"]) .form-floating > .form-control:focus ~ label::after,
+html:not([data-theme="dark"]) .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+html:not([data-theme="dark"]) .form-floating > .form-select ~ label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #ffffff !important;
+    border-radius: 4px;
+}
+
+/* Estilo específico dos labels flutuantes no tema claro */
+[data-theme="light"] .form-floating > .form-control:focus ~ label,
+[data-theme="light"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[data-theme="light"] .form-floating > .form-select ~ label,
+html:not([data-theme="dark"]) .form-floating > .form-control:focus ~ label,
+html:not([data-theme="dark"]) .form-floating > .form-control:not(:placeholder-shown) ~ label,
+html:not([data-theme="dark"]) .form-floating > .form-select ~ label {
+    color: var(--primary-color) !important;
+    padding: 0.25rem 0.5rem !important;
+    background-color: transparent !important;
+}
+
+/* Mudar cor do título "Fale Conosco" para branco */
+.hero-content h1 {
+    color: #ffffff !important;
+}
+
+.hero-content h1 .gradient-text {
+    background: linear-gradient(135deg, #5edfff, #80ffdb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Correção para garantir que o texto digitado nos campos do formulário seja branco no tema escuro */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select,
+[data-theme="dark"] .contact-form textarea.form-control {
+    color: #ffffff !important;
+}
+
+/* Garantir que o texto selecionado também tenha contraste adequado */
+[data-theme="dark"] .contact-form .form-control::selection,
+[data-theme="dark"] .contact-form .form-select::selection,
+[data-theme="dark"] .contact-form textarea.form-control::selection {
+    background-color: rgba(var(--primary-rgb), 0.5);
+    color: #ffffff;
+}
+
+/* Reforço da regra para garantir texto branco nos inputs no tema escuro */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select,
+[data-theme="dark"] .contact-form textarea.form-control,
+[data-theme="dark"] .contact-form input.form-control,
+[data-theme="dark"] .contact-form select.form-control {
+    color: #ffffff !important;
+    caret-color: #ffffff !important; /* Cor do cursor */
+}
+
+[data-theme="dark"] .contact-form .form-control::placeholder,
+[data-theme="dark"] .contact-form .form-select::placeholder,
+[data-theme="dark"] .contact-form textarea.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Remover qualquer estilo que possa estar afetando a cor do texto */
+[data-theme="dark"] .contact-form .form-control,
+[data-theme="dark"] .contact-form .form-select {
+    -webkit-text-fill-color: #ffffff !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Estilos globais para garantir texto branco em todos os elementos de formulário no tema escuro */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .custom-select,
+[data-theme="dark"] .custom-input {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Melhorar contraste de todos os componentes de formulário no tema escuro */
+[data-theme="dark"] ::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+[data-theme="dark"] :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+[data-theme="dark"] ::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Corrigir cores dos itens de contato para ficarem brancos no tema claro */
+html:not([data-theme="dark"]) .contact-item span,
+[data-theme="light"] .contact-item span {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+html:not([data-theme="dark"]) .contact-item i,
+[data-theme="light"] .contact-item i {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Adicionar estilo de hover para melhorar a interatividade */
+html:not([data-theme="dark"]) .contact-item:hover span,
+[data-theme="light"] .contact-item:hover span,
+html:not([data-theme="dark"]) .contact-item:hover i,
+[data-theme="light"] .contact-item:hover i {
+    opacity: 0.9;
+}

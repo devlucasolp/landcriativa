@@ -1,0 +1,1644 @@
+/* Estilos específicos para a página Sobre */
+
+/* Cores globais para resolver problemas de contraste */
+.section-header p {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-light {
+    background-color: var(--bg-grey) !important;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Correções para as ondas no tema escuro */
+[data-theme="dark"] .wave-divider svg path {
+    fill-opacity: 1;
+}
+
+/* Controle de visibilidade da imagem Hero em dispositivos móveis */
+@media (max-width: 767px) {
+    .hero-section .sobre-image {
+        display: none;
+    }
+    
+    /* Ajustar o conteúdo de texto para usar toda a largura */
+    .hero-section .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    /* Centralizar os botões */
+    .hero-section .hero-btns {
+        justify-content: center;
+    }
+    
+    /* Ajustar estatísticas para ficarem mais centralizadas */
+    .hero-section .hero-stats {
+        justify-content: center;
+    }
+}
+
+/* Onda invertida entre Hero e Nossa História - usando gradientes horizontais */
+.top-historia-wave {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -1px;
+    z-index: 10;
+}
+
+.top-historia-wave svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+/* Controle da cor da onda para cada tema - exatamente igual à cor inferior do gradiente */
+.top-historia-wave .wave-path {
+    fill: #4a6bff !important;  /* Cor final do gradiente no tema claro */
+    fill-opacity: 1;
+}
+
+[data-theme="dark"] .top-historia-wave .wave-path {
+    fill: #1a2d5e !important;  /* Cor final do gradiente no tema escuro */
+    fill-opacity: 1;
+}
+
+/* Onda da Historia para Equipe */
+[data-theme="dark"] .historia-wave svg path {
+    fill: var(--bg-dark) !important;
+}
+
+/* Onda da Equipe para Missão/Visão/Valores */
+[data-theme="dark"] .equipe-wave svg path {
+    fill: var(--bg-dark) !important;
+}
+
+/* Onda da Missão para Tecnologias */
+[data-theme="dark"] .missao-wave svg path {
+    fill: var(--bg-dark) !important;
+}
+
+/* Onda da Tecnologias para CTA */
+/* Removendo a regra duplicada */
+
+/* Onda entre diferenciais e CTA */
+.tecnologias-wave .wave-path {
+    fill: #6b8aff !important;  /* Cor inicial (mais clara) do gradiente no tema claro */
+    fill-opacity: 1;
+}
+
+[data-theme="dark"] .tecnologias-wave .wave-path {
+    fill: #2a417e !important;  /* Cor inicial (mais clara) do gradiente no tema escuro */
+    fill-opacity: 1;
+}
+
+/* Correções no header e navegação */
+.navbar-brand img {
+    height: 80px;
+    width: auto;
+    transition: all var(--transition-normal);
+}
+
+/* Gradiente para CTA */
+.bg-primary-gradient {
+    background: linear-gradient(to bottom, #6b8aff, #4a6bff);
+}
+
+[data-theme="dark"] .bg-primary-gradient {
+    background: linear-gradient(to bottom, #2a417e, #1a2d5e);
+}
+
+.navbar .nav-link.active {
+    /* Estas regras serão sobrescritas pelas regras específicas de scroll e não-scroll */
+    position: relative; /* Mantendo apenas a posição relativa que é comum */
+}
+
+.navbar .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    border-radius: 2px;
+    /* Removendo a cor de fundo, pois será definida nas regras específicas */
+}
+
+[data-theme="dark"] .navbar .nav-link.active {
+    /* Removendo regras específicas, pois serão definidas nas regras baseadas no scroll */
+}
+
+[data-theme="dark"] .navbar .nav-link.active::after {
+    /* Removendo regras específicas, pois serão definidas nas regras baseadas no scroll */
+}
+
+/* Hero Section específica para Sobre - ajustado para manter a identidade visual */
+.sobre-hero {
+    background: linear-gradient(to bottom, #6b8aff 0%, #4a6bff 100%);
+    padding: 180px 0 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .sobre-hero {
+    background: linear-gradient(to bottom, #2a417e 0%, #1a2d5e 100%);
+}
+
+.sobre-image {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-image img {
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 100%;
+    height: auto;
+}
+
+.sobre-image img:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-image .shape-1,
+.sobre-image .shape-2 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.sobre-image .shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+}
+
+.sobre-image .shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    left: -30px;
+}
+
+/* Seção Nossa História - Otimizada */
+.nossa-historia-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0; /* Ajustado para conectar corretamente com a onda */
+}
+
+.historia-content {
+    position: relative;
+    padding-left: 20px;
+}
+
+.historia-content:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+}
+
+.historia-item {
+    margin-bottom: 50px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.historia-item:last-child {
+    margin-bottom: 0;
+}
+
+.historia-item:hover {
+    transform: translateX(5px);
+}
+
+.historia-year {
+    position: absolute;
+    left: -38px;
+    top: 0;
+    background: var(--primary-gradient);
+    color: #fff;
+    border-radius: 30px;
+    padding: 8px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.historia-item:hover .historia-year {
+    box-shadow: 0 8px 20px rgba(74, 107, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.historia-text {
+    padding-left: 30px;
+}
+
+.historia-text h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+    position: relative;
+    display: inline-block;
+}
+
+.historia-text h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: all 0.3s ease;
+}
+
+.historia-item:hover .historia-text h3:after {
+    width: 100%;
+}
+
+[data-theme="dark"] .historia-text h3 {
+    color: #ffffff;
+}
+
+.historia-text p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+[data-theme="dark"] .historia-text p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.historia-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.historia-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
+
+.historia-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.historia-image:hover img {
+    transform: scale(1.05);
+}
+
+.historia-badge {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    background: var(--primary-gradient);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.historia-badge span {
+    font-size: 26px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.historia-badge p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Seção Equipe - Refinada */
+.equipe-section {
+    padding: 100px 0;
+    background-color: var(--bg-grey);
+    position: relative;
+}
+
+[data-theme="dark"] .equipe-section {
+    background-color: var(--bg-dark);
+}
+
+.membro-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+}
+
+[data-theme="dark"] .membro-card {
+    background-color: var(--dark-card-bg);
+}
+
+.membro-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.membro-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.membro-img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.membro-img:hover img {
+    transform: scale(1.08);
+}
+
+.membro-social {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 20px 0 15px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.membro-card:hover .membro-social {
+    bottom: 0;
+    opacity: 1;
+}
+
+.membro-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 8px;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.membro-social a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+}
+
+.membro-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.membro-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+    position: relative;
+    display: inline-block;
+}
+
+.membro-info h3:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.membro-card:hover .membro-info h3:after {
+    width: 50px;
+}
+
+[data-theme="dark"] .membro-info h3 {
+    color: #ffffff;
+}
+
+.membro-info .cargo {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.membro-info .bio {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .membro-info .bio {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Seção Missão, Visão e Valores - Melhorada */
+.missao-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mvv-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.mvv-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-gradient);
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.mvv-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(74, 107, 255, 0.15);
+}
+
+.mvv-card:hover::before {
+    height: 100%;
+    opacity: 0.05;
+}
+
+[data-theme="dark"] .mvv-card {
+    background-color: var(--dark-card-bg);
+}
+
+.mvv-icon {
+    font-size: 45px;
+    margin-bottom: 25px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.mvv-card:hover .mvv-icon {
+    transform: scale(1.1);
+}
+
+.mvv-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    position: relative;
+    display: inline-block;
+}
+
+.mvv-card h3:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: all 0.3s ease;
+}
+
+.mvv-card:hover h3:after {
+    width: 100%;
+}
+
+[data-theme="dark"] .mvv-card h3 {
+    color: #ffffff;
+}
+
+.mvv-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .mvv-card p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.valores-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.valores-list li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+.valores-list li:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .valores-list li {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .valores-list li:hover {
+    color: #fff;
+}
+
+.valores-list li:last-child {
+    margin-bottom: 0;
+}
+
+.valores-list li i {
+    color: var(--primary-color);
+    margin-right: 12px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.valores-list li:hover i {
+    transform: scale(1.2);
+}
+
+/* Seção Tecnologias - Aprimorada com ícones FA */
+.tecnologias-section {
+    padding: 100px 0;
+    background-color: var(--bg-grey);
+    position: relative;
+}
+
+[data-theme="dark"] .tecnologias-section {
+    background-color: var(--bg-dark);
+}
+
+.tecnologias-grid {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.tech-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tech-item::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--primary-gradient);
+    transition: all 0.3s ease;
+}
+
+.tech-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--primary-gradient);
+    opacity: 0.05;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+[data-theme="dark"] .tech-item {
+    background-color: var(--dark-card-bg);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.tech-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(74, 107, 255, 0.15);
+}
+
+.tech-item:hover::before {
+    top: 0;
+}
+
+.tech-item:hover::after {
+    height: 100%;
+}
+
+.tech-item i {
+    font-size: 70px;
+    margin-bottom: 25px;
+    transition: all 0.5s ease;
+    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.tech-item:hover i {
+    transform: scale(1.15);
+}
+
+.tech-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tech-desc {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-top: 12px;
+    line-height: 1.5;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .tech-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-item:hover .tech-desc {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .tech-item:hover .tech-desc {
+    color: var(--primary-light);
+}
+
+.tech-item h4:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.tech-item:hover h4 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-item:hover h4:after {
+    width: 70px;
+}
+
+[data-theme="dark"] .tech-item h4 {
+    color: #fff;
+}
+
+/* Seção Por Que Nos Escolher (Diferenciais) */
+.diferenciais-section {
+    padding: 100px 0 150px;
+    background-color: var(--bg-grey);
+    position: relative;
+}
+
+[data-theme="dark"] .diferenciais-section {
+    background-color: var(--bg-dark);
+}
+
+/* Estilo aprimorado para os cards de diferenciais */
+.diferenciais-section .tech-item {
+    border-radius: 18px;
+    padding: 40px 30px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.diferenciais-section .tech-item:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 25px 50px rgba(74, 107, 255, 0.2);
+}
+
+.diferenciais-section .tech-item i {
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.diferenciais-section .tech-item:hover i {
+    transform: scale(1.2) rotate(5deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.diferenciais-section .tech-item h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+    position: relative;
+}
+
+[data-theme="dark"] .diferenciais-section .tech-item h4 {
+    color: #ffffff;
+}
+
+.diferenciais-section .tech-item h4:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.diferenciais-section .tech-item:hover h4:after {
+    width: 80px;
+    opacity: 1;
+}
+
+.diferenciais-section .tech-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .diferenciais-section .tech-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.diferenciais-section .tech-item:hover .tech-desc {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .diferenciais-section .tech-item:hover .tech-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .diferenciais-section .tech-item {
+        min-height: 260px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .diferenciais-section {
+        padding: 80px 0;
+    }
+    
+    .diferenciais-section .tech-item {
+        min-height: 240px;
+        padding: 25px 15px;
+    }
+    
+    .diferenciais-section .tech-item i {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .diferenciais-section .tech-item h4 {
+        font-size: 18px;
+    }
+    
+    .diferenciais-section .tech-desc {
+        font-size: 14px;
+    }
+}
+
+/* Media Queries - Otimizadas */
+@media (max-width: 1199px) {
+    .sobre-hero {
+        padding: 150px 0 200px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .sobre-hero {
+        padding: 140px 0 180px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .historia-year {
+        position: relative;
+        left: 0;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .historia-text {
+        padding-left: 0;
+    }
+    
+    .historia-image {
+        margin-top: 50px;
+    }
+    
+    .historia-badge {
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    .membro-img img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Centralizar letras do header no mobile */
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+    
+    .navbar .nav-link.active::after {
+        left: 30%;
+        right: 30%;
+    }
+    
+    /* Suavizar ondas no mobile */
+    .wave-divider svg {
+        height: 40px !important;
+    }
+    
+    /* Remover bolinhas da seção hero no mobile */
+    .sobre-image .shape-1,
+    .sobre-image .shape-2 {
+        display: none;
+    }
+    
+    /* Ajustes gerais para mobile */
+    .sobre-hero {
+        padding: 120px 0 120px; /* Aumentado o padding superior para evitar sobreposição */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .sobre-image {
+        margin-top: 40px;
+    }
+    
+    .missao-section .col-md-4 {
+        margin-bottom: 30px;
+    }
+    
+    .missao-section .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+    
+    .nossa-historia-section,
+    .missao-section,
+    .equipe-section,
+    .tecnologias-section {
+        padding: 80px 0;
+    }
+    
+    .tecnologias-grid {
+        gap: 15px;
+    }
+    
+    /* Aumentar espaçamento dos cards "Por que nos escolher" */
+    .diferenciais-section .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+    .diferenciais-section .col-lg-3,
+    .diferenciais-section .col-md-4,
+    .diferenciais-section .col-sm-6 {
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+    
+    .diferenciais-section .tech-item {
+        padding: 30px 20px;
+        min-height: 220px;
+    }
+    
+    .tech-item {
+        padding: 25px 15px;
+    }
+    
+    .tech-item i {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .tech-item h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .sobre-hero {
+        padding: 140px 0 100px; /* Aumentado ainda mais o padding superior para dispositivos muito pequenos */
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .historia-content:before {
+        display: none;
+    }
+    
+    .historia-text {
+        padding-left: 0;
+    }
+    
+    /* Melhorar espaçamento dos cards "Por que nos escolher" em telas muito pequenas */
+    .diferenciais-section .col-sm-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .diferenciais-section .tech-item {
+        min-height: auto;
+        padding: 35px 25px;
+        margin-bottom: 25px;
+    }
+    
+    .diferenciais-section .tech-item i {
+        font-size: 55px;
+        margin-bottom: 20px;
+    }
+    
+    .diferenciais-section .tech-item h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .diferenciais-section .tech-desc {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .tech-item {
+        padding: 20px 15px;
+    }
+    
+    .tech-item i {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+    
+    .tech-item h4 {
+        font-size: 16px;
+    }
+    
+    .hero-stats {
+        gap: var(--spacing-md);
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+}
+
+/* Ajuste específico para os botões de navegação e tema no mobile */
+@media (max-width: 767px) {
+    .theme-switch-wrapper {
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Onda invertida entre Equipe e Missão/Visão/Valores */
+.top-missao-wave {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -1px;
+    z-index: 10;
+}
+
+.top-missao-wave svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.top-missao-wave .wave-path {
+    fill: #f8f9fa !important;  /* Cor final do gradiente no tema claro - usando bg-light */
+    fill-opacity: 1;
+}
+
+[data-theme="dark"] .top-missao-wave .wave-path {
+    fill: var(--bg-dark) !important;  /* Cor final do gradiente no tema escuro */
+    fill-opacity: 1;
+}
+
+/* Regras para o comportamento da logo no topo */
+/* Estado padrão (sem scroll) - INVERTIDO para o tema claro */
+.logo-light {
+    display: block; /* No topo, mostra logo branca mesmo no tema claro */
+}
+
+.logo-dark {
+    display: none; /* No topo, esconde logo preta no tema claro */
+}
+
+/* No tema escuro - mantém o padrão */
+[data-theme="dark"] .logo-light {
+    display: block;
+}
+
+[data-theme="dark"] .logo-dark {
+    display: none;
+}
+
+/* Quando scrollado no tema claro - VOLTA AO NORMAL */
+.navbar.scrolled .logo-light {
+    display: none; /* Após scroll, esconde logo branca no tema claro */
+}
+
+.navbar.scrolled .logo-dark {
+    display: block; /* Após scroll, mostra logo preta no tema claro */
+}
+
+/* Quando scrollado no tema escuro - mantém o mesmo comportamento */
+[data-theme="dark"] .navbar.scrolled .logo-light {
+    display: block;
+}
+
+[data-theme="dark"] .navbar.scrolled .logo-dark {
+    display: none;
+}
+
+/* Regras para links de navegação no topo da página */
+/* Quando no topo da página (sem scroll), todos os links são brancos - independente do tema */
+.navbar:not(.scrolled) .nav-link {
+    color: white;
+}
+
+.navbar:not(.scrolled) .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Regra para o link ativo no topo da página */
+.navbar:not(.scrolled) .nav-link.active {
+    color: white;
+    font-weight: 600;
+}
+
+.navbar:not(.scrolled) .nav-link.active::after {
+    background: var(--primary-color);
+}
+
+/* Corrigindo os estilos do link ativo quando a página é rolada */
+.navbar.scrolled .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.navbar.scrolled .nav-link.active::after {
+    background: var(--primary-gradient);
+}
+
+/* Tema escuro - link ativo quando rolado */
+[data-theme="dark"] .navbar.scrolled .nav-link.active {
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .navbar.scrolled .nav-link.active::after {
+    background: var(--primary-light);
+}
+
+/* Tema escuro - link ativo quando no topo */
+[data-theme="dark"] .navbar:not(.scrolled) .nav-link.active::after {
+    background: var(--primary-light);
+}
+
+/* Regras para o botão de alternar tema no topo */
+.navbar:not(.scrolled) .theme-switch {
+    border-color: rgba(255, 255, 255, 0.5); /* Reduzindo opacidade da borda para 50% */
+    color: white;
+}
+
+.navbar:not(.scrolled) .theme-switch:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8); /* Aumentando levemente ao passar o mouse */
+}
+
+/* Configurações específicas para o menu mobile */
+@media (max-width: 991.98px) {
+    /* Garantir que os estilos de link no menu mobile funcionem corretamente */
+    .navbar-collapse .nav-link {
+        color: var(--text-white) !important;
+    }
+    
+    .navbar-collapse .nav-link:hover::after,
+    .navbar-collapse .nav-link.active::after {
+        opacity: 0 !important; /* Remover sublinhado no mobile */
+    }
+    
+    .navbar-collapse .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 70%;
+        background: #fff;
+        border-radius: 0 3px 3px 0;
+    }
+    
+    /* NÃO incluindo configurações de logo que estavam causando problemas */
+    
+    /* Animação de entrada do menu */
+    .navbar-collapse.collapsing {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    
+    .navbar-collapse.show {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    /* Indicador de menu ativo */
+    .navbar-nav .nav-link.active {
+        position: relative;
+        font-weight: 600;
+    }
+    
+    .navbar-nav .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 70%;
+        background: #fff;
+        border-radius: 0 3px 3px 0;
+    }
+    
+    /* Melhor feedback visual para o hover */
+    .navbar-nav .nav-link {
+        transition: all 0.2s ease;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        padding-left: 1.5rem !important;
+    }
+    
+    /* Ajuste para o container do navbar */
+    .navbar > .container {
+        position: relative;
+    }
+    
+    /* Ajuste para a cor e sombra na versão mobile */
+    .navbar-collapse {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    [data-theme="dark"] .navbar-collapse {
+        background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important;
+    }
+    
+    /* Melhor visualização dos ícones */
+    .navbar-nav .nav-link i {
+        width: 24px;
+        text-align: center;
+        margin-right: 8px;
+        font-size: 1rem;
+    }
+    
+    /* Melhorias para o botão de tema no mobile */
+    .theme-switch-wrapper {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .theme-switch-wrapper::before {
+        content: 'Alternar tema';
+        color: rgba(255, 255, 255, 0.8);
+        margin-right: 10px;
+        font-size: 0.85rem;
+    }
+    
+    .theme-switch {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease;
+    }
+    
+    .theme-switch:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+    
+    /* Adicionar animação de entrada para os itens do menu */
+    .navbar-nav .nav-item {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeInUp 0.4s forwards;
+    }
+    
+    .navbar-nav .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .navbar-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
+    .navbar-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
+    .navbar-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 575.98px) {
+    /* Ajustar a informação do tema em telas pequenas */
+    .theme-switch-wrapper::before {
+        display: none;
+    }
+    
+    .theme-switch-wrapper::after {
+        content: 'Tema';
+        color: rgba(255, 255, 255, 0.8);
+        margin-left: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .navbar-collapse {
+        margin: 1rem -15px 0;
+        width: calc(100% + 30px);
+        border-radius: var(--border-radius-md);
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+    
+    .navbar-brand img {
+        height: 70px; /* Reduzir um pouco em telas muito pequenas */
+    }
+    
+    .navbar-toggler {
+        padding: 5px 8px;
+    }
+    
+    /* Melhorar scroll dentro do menu */
+    .navbar-collapse::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .navbar-collapse::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar-collapse::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+}
+
+/* Estilos para a seção de Tecnologias */
+.tech-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+[data-theme="dark"] .tech-intro {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.tech-stack-grid {
+    margin-top: 20px;
+}
+
+.tech-stack-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tech-stack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--primary-gradient);
+    z-index: -1;
+}
+
+[data-theme="dark"] .tech-stack-card {
+    background-color: var(--dark-card-bg);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.tech-stack-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(74, 107, 255, 0.15);
+}
+
+.tech-stack-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.tech-stack-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    margin-right: 15px;
+    font-size: 26px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.25);
+}
+
+.tech-stack-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--heading-color);
+}
+
+[data-theme="dark"] .tech-stack-header h3 {
+    color: #ffffff;
+}
+
+.tech-stack-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tech-item-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tech-item-small:hover {
+    transform: translateY(-5px);
+}
+
+/* Correção para os ícones de tecnologia que estão muito grandes */
+.tech-item-small img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 8px;
+    object-fit: contain !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+}
+
+.tech-item-small span {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+[data-theme="dark"] .tech-item-small span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary-gradient);
+    color: #fff;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.25);
+}
+
+.tech-badge i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.tech-badge p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+@media (max-width: 991px) {
+    .tech-stack-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .tech-intro {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .tech-stack-card {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .tech-stack-header {
+        margin-bottom: 20px;
+    }
+    
+    .tech-stack-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    
+    .tech-stack-header h3 {
+        font-size: 20px;
+    }
+    
+    .tech-badge {
+        padding: 10px 20px;
+    }
+    
+    .tech-badge i {
+        font-size: 20px;
+    }
+    
+    .tech-badge p {
+        font-size: 14px;
+    }
+    
+    /* Ajustes para melhor espaçamento vertical no mobile */
+    .tech-stack-grid .col-md-6 {
+        margin-bottom: 30px;
+    }
+    
+    .tech-stack-grid .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .tech-stack-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .tech-item-small img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tech-item-small span {
+        font-size: 12px;
+    }
+    
+    /* Aumentar ainda mais o espaçamento vertical em telas muito pequenas */
+    .tech-stack-card {
+        margin-bottom: 40px;
+    }
+    
+    .tech-stack-grid .col-md-6 {
+        margin-bottom: 40px;
+    }
+}

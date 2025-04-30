@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Bank - Uma nova experiência de mobile banking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <span class="navbar-brand">SPACE BANK</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Página inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Planos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Uma experiência totalmente nova de mobile banking</h1>
+                    <div class="row mt-5">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-card card-1">
+                                <h3>Seus dados seguros conosco</h3>
+                                <p>A segurança é nossa prioridade número um.</p>
+                                <a href="#" class="read-more">Saiba Mais <i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-card-wrapper">
+                                <div class="feature-card card-2 mb-4">
+                                    <h3>Como funciona?</h3>
+                                    <a href="#" class="read-more">Saiba Mais <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                                <div class="feature-card card-3">
+                                    <h3>Veja nossos preços</h3>
+                                    <a href="#" class="read-more">Saiba Mais <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="feature-card card-download">
+                                <h3>Baixe agora</h3>
+                                <div class="app-buttons">
+                                    <div class="d-flex mt-3">
+                                        <i class="fab fa-google-play me-4"></i>
+                                        <i class="fab fa-app-store-ios"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="imgs/phone1.png" alt="Space Bank App" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="purple-orb orb-1"></div>
+        <div class="purple-orb orb-2"></div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>Nós criamos a solução ideal para o Mobile Banking</h2>
+                    <p>Em um mundo cada vez mais digital, a segurança e a praticidade são essenciais. Nosso aplicativo foi projetado para oferecer a melhor experiência bancária na palma da sua mão.</p>
+                    <p>Tecnologia de ponta combinada com uma interface intuitiva garantem que você tenha controle total das suas finanças com apenas alguns toques.</p>
+                    <div class="benefits-list mt-4">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle"></i> Crie facilmente cartões virtuais</li>
+                            <li><i class="fas fa-check-circle"></i> Taxa zero de serviço 24/7</li>
+                            <li><i class="fas fa-check-circle"></i> Sem necessidade de cartão físico</li>
+                            <li><i class="fas fa-check-circle"></i> Banco virtual com serviços garantidos</li>
+                            <li><i class="fas fa-check-circle"></i> Compartilhamento fácil entre amigos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <div class="icon-box">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h4>Conta bancária</h4>
+                                <p>Abra sua conta digital em minutos e gerencie seus recursos com facilidade.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <div class="icon-box">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <h4>Pagamento</h4>
+                                <p>Pague suas contas instantaneamente com total segurança e rastreabilidade.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="feature-box">
+                                <div class="icon-box">
+                                    <i class="fas fa-money-check"></i>
+                                </div>
+                                <h4>Transferência</h4>
+                                <p>Envie dinheiro para qualquer pessoa a qualquer momento sem complicações.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="feature-box">
+                                <div class="icon-box">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Investimento</h4>
+                                <p>Invista seu dinheiro em oportunidades selecionadas com rendimentos atrativos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="phone-image">
+                        <img src="imgs/Phone3.png" alt="Space Bank Features" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Nossos recursos facilitam seu dia a dia</h2>
+                    <p>Com o Space Bank, você tem acesso a ferramentas inovadoras que simplificam sua vida financeira. Nossa plataforma foi desenvolvida pensando na sua experiência, combinando tecnologia de ponta com design intuitivo para garantir que você gerencie seu dinheiro com facilidade e segurança.</p>
+                    <a href="#" class="btn btn-outline-light mt-4">Ver todos os recursos</a>
+                </div>
+            </div>
+        </div>
+        <div class="purple-orb orb-3"></div>
+        <div class="purple-orb orb-4"></div>
+    </section>
+
+    <!-- Registration Steps -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>Passos simples para o seu cadastro</h2>
+                    <p>Abrir sua conta no Space Bank é rápido e descomplicado. Apenas siga estas etapas simples e em poucos minutos você terá acesso a todos os nossos serviços digitais.</p>
+                    <ul class="steps-list">
+                        <li><span class="step-line"></span> Digite seu CPF</li>
+                        <li><span class="step-line"></span> Insira seus dados pessoais</li>
+                        <li><span class="step-line"></span> Selecione seu endereço</li>
+                        <li><span class="step-line"></span> Crie uma senha segura</li>
+                        <li><span class="step-line"></span> Confirme sua identidade</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="floating-phone">
+                        <img src="imgs/phone4.1.png" alt="Etapas de Registro" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container text-center">
+            <h2>Por que escolher o Space Bank?</h2>
+            <p class="section-desc">Somos mais que um banco digital. Somos uma plataforma financeira completa que coloca você no controle do seu dinheiro com tecnologia de ponta, segurança avançada e uma experiência de usuário excepcional.</p>
+            
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="choose-card">
+                        <h4>Dados 100% seguros</h4>
+                        <p>Proteção de nível bancário para todas as suas informações e transações.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="choose-card">
+                        <h4>Transferências instantâneas</h4>
+                        <p>Envie dinheiro para outros bancos em segundos, 24 horas por dia.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="choose-card">
+                        <h4>Pagamentos protegidos</h4>
+                        <p>Tecnologia avançada de criptografia em todas as movimentações.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="choose-card">
+                        <h4>Crédito personalizado</h4>
+                        <p>Soluções de empréstimo adaptadas ao seu perfil e necessidades.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-outline-light mt-4">Conheça todos os serviços</a>
+        </div>
+        <div class="purple-orb orb-5"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="phone-mockup">
+                        <img src="imgs/phone4.1.png" alt="Space Bank App" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2>O que nossos clientes<br> dizem sobre o app</h2>
+                    <div id="testimonialCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card">
+                                    <div class="user-info">
+                                        <img src="imgs/team-1.jpg" alt="Usuário" class="rounded-circle">
+                                        <div>
+                                            <h5>Pedro Almeida</h5>
+                                            <p>Empresário</p>
+                                        </div>
+                                    </div>
+                                    <p class="comment">O Space Bank revolucionou a forma como administro minhas finanças. A interface é intuitiva e todas as operações são concluídas em segundos. Recomendo a todos!</p>
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <div class="user-info">
+                                        <img src="imgs/team-2.jpg" alt="Usuário" class="rounded-circle">
+                                        <div>
+                                            <h5>Marina Costa</h5>
+                                            <p>Desenvolvedora</p>
+                                        </div>
+                                    </div>
+                                    <p class="comment">Finalmente um banco que entende o que significa ter uma boa experiência digital. O suporte é excelente e as funcionalidades atendem todas as minhas necessidades.</p>
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Perguntas<br> frequentes</h2>
+                    <p>Encontre respostas para suas principais dúvidas sobre nossos serviços.</p>
+                    
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Como alterar minha foto de perfil no aplicativo?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Para alterar sua foto de perfil, acesse as configurações da sua conta no menu principal. Clique em "Perfil" e depois na opção "Alterar foto". Você poderá escolher uma imagem da sua galeria ou tirar uma nova foto.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Quanto tempo leva para uma transferência ser concluída?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>As transferências entre contas Space Bank são instantâneas. Para outros bancos, transferências PIX são imediatas, enquanto TED pode levar até 1 hora útil, dependendo do horário da operação e do banco de destino.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Como solicitar um cartão de crédito Space Bank?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Para solicitar seu cartão de crédito, acesse a seção "Cartões" no aplicativo e selecione "Solicitar novo cartão". Nossa análise é rápida e você receberá uma resposta em até 1 dia útil. O cartão será entregue em seu endereço cadastrado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3>Tem alguma dúvida? Fale conosco</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Escreva sua mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-light">Enviar mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SPACE BANK</h5>
+                    <p>Transformando o futuro das finanças digitais. Simples, seguro e totalmente conectado com você.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2023 Space Bank. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de voltar para projetos fixo -->
+    <div class="return-to-projects-bar">
+        <div class="container">
+            <a href="../../projetos.html#portfolio" class="return-to-projects-btn">
+                <span class="return-text"><i class="fas fa-arrow-left me-2"></i>Voltar para Galeria de Projetos</span>
+                <img src="../../imgs/Logo land White.png" alt="Land Criativa" class="land-logo-btn">
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

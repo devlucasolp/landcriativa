@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transforme suas vendas com nossa solução completa de marketing digital. Aumente suas conversões em até 300% em 30 dias.">
+    <title>VendaMais Pro - Solução Completa de Marketing Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span>VendaMais Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Benefícios</a>
+                <a href="#">Resultados</a>
+                <a href="#">Planos</a>
+                <a href="#" class="cta-nav">Começar Agora</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforme Suas Vendas em 30 Dias ou Seu Dinheiro de Volta!</h1>
+                    <p class="hero-subtitle">Junte-se a mais de 1.000 empresas que aumentaram suas vendas em até 300%</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">300%</span>
+                            <span class="stat-text">Aumento Médio em Vendas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1.000+</span>
+                            <span class="stat-text">Clientes Satisfeitos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30</span>
+                            <span class="stat-text">Dias de Garantia</span>
+                        </div>
+                    </div>
+                    <div class="oferta-timer">
+                        <p>Oferta especial por tempo limitado:</p>
+                        <div class="timer" id="countdown">24:59:59</div>
+                    </div>
+                    <button class="cta-button pulse">
+                        <i class="fas fa-rocket"></i>
+                        Quero Aumentar Minhas Vendas Agora
+                    </button>
+                    <p class="garantia">
+                        <i class="fas fa-shield-alt"></i>
+                        Garantia de 30 dias ou seu dinheiro de volta
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="resultados.png" alt="Dashboard de Resultados">
+                        <div class="image-overlay">
+                            <div class="metric">
+                                <span class="metric-value">+450%</span>
+                                <span class="metric-label">Vendas</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+300%</span>
+                                <span class="metric-label">Conversão</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">+200%</span>
+                                <span class="metric-label">ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="beneficios">
+            <h2>Por que escolher a VendaMais Pro?</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Aumento de Vendas</h3>
+                    <p>Média de 300% de aumento nas vendas em 30 dias</p>
+                    <ul class="beneficio-list">
+                        <li><i class="fas fa-check"></i> Análise de mercado</li>
+                        <li><i class="fas fa-check"></i> Estratégias personalizadas</li>
+                        <li><i class="fas fa-check"></i> Relatórios detalhados</li>
+                    </ul>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Resultados Rápidos</h3>
+                    <p>Primeiros resultados em menos de 7 dias</p>
+                    <ul class="beneficio-list">
+                        <li><i class="fas fa-check"></i> Implementação rápida</li>
+                        <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                        <li><i class="fas fa-check"></i> Acompanhamento diário</li>
+                    </ul>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantia Total</h3>
+                    <p>30 dias de garantia incondicional</p>
+                    <ul class="beneficio-list">
+                        <li><i class="fas fa-check"></i> Sem riscos</li>
+                        <li><i class="fas fa-check"></i> Reembolso garantido</li>
+                        <li><i class="fas fa-check"></i> Suporte premium</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="depoimentos">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="depoimentos-grid">
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" alt="Ana Beatriz">
+                        <div class="depoimento-info">
+                            <h4>Ana Beatriz</h4>
+                            <p>Empreendedora Digital</p>
+                            <div class="depoimento-cargo">
+                                <i class="fas fa-store"></i>
+                                <span>Loja de Moda Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento-content">
+                        <p>"Antes da VendaMais Pro, minha loja online estava estagnada. Em apenas 2 meses, aumentamos nossas vendas em 450%! A equipe é incrível e o suporte é excepcional. Recomendo para qualquer empreendedor que queira escalar seu negócio digital."</p>
+                        <div class="depoimento-metricas">
+                            <div class="metrica">
+                                <span class="metrica-numero">450%</span>
+                                <span class="metrica-texto">Aumento em Vendas</span>
+                            </div>
+                            <div class="metrica">
+                                <span class="metrica-numero">2</span>
+                                <span class="metrica-texto">Meses</span>
+                            </div>
+                        </div>
+                        <div class="depoimento-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop" alt="Carlos Eduardo">
+                        <div class="depoimento-info">
+                            <h4>Carlos Eduardo</h4>
+                            <p>Consultor Financeiro</p>
+                            <div class="depoimento-cargo">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>Consultoria Financeira</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento-content">
+                        <p>"Como consultor financeiro, precisava de uma solução que gerasse resultados reais. A VendaMais Pro superou todas as expectativas! Aumentamos nossa base de clientes em 300% e o ROI foi impressionante. A estratégia personalizada fez toda a diferença."</p>
+                        <div class="depoimento-metricas">
+                            <div class="metrica">
+                                <span class="metrica-numero">300%</span>
+                                <span class="metrica-texto">Mais Clientes</span>
+                            </div>
+                            <div class="metrica">
+                                <span class="metrica-numero">5x</span>
+                                <span class="metrica-texto">ROI</span>
+                            </div>
+                        </div>
+                        <div class="depoimento-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-header">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop" alt="Mariana Silva">
+                        <div class="depoimento-info">
+                            <h4>Mariana Silva</h4>
+                            <p>Nutricionista</p>
+                            <div class="depoimento-cargo">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Clínica de Nutrição</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento-content">
+                        <p>"Como profissional da saúde, precisava de uma solução que respeitasse a ética do meu trabalho. A VendaMais Pro entendeu perfeitamente e nos ajudou a triplicar o número de consultas em apenas 3 meses. A abordagem humanizada fez toda a diferença!"</p>
+                        <div class="depoimento-metricas">
+                            <div class="metrica">
+                                <span class="metrica-numero">3x</span>
+                                <span class="metrica-texto">Mais Consultas</span>
+                            </div>
+                            <div class="metrica">
+                                <span class="metrica-numero">3</span>
+                                <span class="metrica-texto">Meses</span>
+                            </div>
+                        </div>
+                        <div class="depoimento-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planos" class="planos">
+            <h2>Escolha seu Plano</h2>
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Básico</h3>
+                        <div class="plano-preco">
+                            <span class="preco-antigo">De: R$ 997,00</span>
+                            <span class="preco-atual">R$ 497,00</span>
+                            <span class="preco-periodo">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="plano-beneficios">
+                        <li><i class="fas fa-check"></i> Análise de mercado</li>
+                        <li><i class="fas fa-check"></i> Estratégia básica</li>
+                        <li><i class="fas fa-check"></i> Relatórios semanais</li>
+                        <li><i class="fas fa-check"></i> Suporte por email</li>
+                    </ul>
+                    <button class="plano-cta">Começar Agora</button>
+                </div>
+                <div class="plano-card destaque">
+                    <div class="plano-header">
+                        <h3>Profissional</h3>
+                        <div class="plano-preco">
+                            <span class="preco-antigo">De: R$ 1.497,00</span>
+                            <span class="preco-atual">R$ 997,00</span>
+                            <span class="preco-periodo">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="plano-beneficios">
+                        <li><i class="fas fa-check"></i> Tudo do plano Básico</li>
+                        <li><i class="fas fa-check"></i> Estratégia avançada</li>
+                        <li><i class="fas fa-check"></i> Relatórios diários</li>
+                        <li><i class="fas fa-check"></i> Suporte prioritário</li>
+                        <li><i class="fas fa-check"></i> Consultoria mensal</li>
+                    </ul>
+                    <button class="plano-cta destaque">Começar Agora</button>
+                </div>
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Enterprise</h3>
+                        <div class="plano-preco">
+                            <span class="preco-antigo">De: R$ 2.997,00</span>
+                            <span class="preco-atual">R$ 1.997,00</span>
+                            <span class="preco-periodo">/mês</span>
+                        </div>
+                    </div>
+                    <ul class="plano-beneficios">
+                        <li><i class="fas fa-check"></i> Tudo do plano Profissional</li>
+                        <li><i class="fas fa-check"></i> Estratégia personalizada</li>
+                        <li><i class="fas fa-check"></i> Relatórios em tempo real</li>
+                        <li><i class="fas fa-check"></i> Gerente dedicado</li>
+                        <li><i class="fas fa-check"></i> Consultoria semanal</li>
+                    </ul>
+                    <button class="plano-cta">Começar Agora</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <h2>Fale Conosco Agora</h2>
+            <div class="contato-container">
+                <form class="form-contato">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Seu Telefone" required>
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Como podemos ajudar?" required></textarea>
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <button type="submit" class="cta-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Quero Falar com um Especialista
+                    </button>
+                </form>
+                <div class="contato-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Telefone</h4>
+                        <p>(11) 99999-9999</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>contato@vendamais.com.br</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Atendimento</h4>
+                        <p>24/7</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo-vendamais.png" alt="VendaMais Pro Logo">
+                <p>Transformando vendas desde 2020</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <a href="#">Benefícios</a>
+                    <a href="#">Resultados</a>
+                    <a href="#">Planos</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Garantia</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VendaMais Pro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="page-overlay">
+        <div class="overlay-message">
+            <i class="fas fa-info-circle"></i>
+            <div class="message-content">
+                <div class="message-title">Aviso Importante</div>
+                <div class="message-text">Caso o botão for clicado, a página será fechada. Por favor, sinta-se a vontade para continuar navegando.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra inferior com opções -->
+    <div class="return-to-projects-bar">
+        <div class="container">
+            <a href="../../projetos.html#portfolio" class="return-to-projects-btn">
+                <span class="return-text"><i class="fas fa-arrow-left me-2"></i>Voltar para Galeria de Projetos</span>
+                <img src="../../imgs/Logo land White.png" alt="Land Criativa" class="land-logo-btn">
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .return-to-projects-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(45deg, #17a2b8, #0056b3);
+            text-align: center;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .return-to-projects-btn {
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            padding: 8px 30px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.12);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            max-width: 100%;
+        }
+        
+        .return-to-projects-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .land-logo-btn {
+            height: 50px;
+            margin-left: 20px;
+            margin-right: 0;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+        }
+        
+        .return-text {
+            position: relative;
+            display: inline-block;
+            font-size: 1.05rem;
+        }
+        
+        @media (max-width: 768px) {
+            .return-to-projects-bar {
+                padding: 12px 0;
+            }
+            
+            .return-to-projects-btn {
+                padding: 10px 15px;
+                width: 100%;
+                max-width: 350px;
+                font-size: 0.95rem;
+            }
+            
+            .land-logo-btn {
+                height: 45px;
+                margin-left: 15px;
+                margin-right: 0;
+            }
+            
+            .return-text {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Contador regressivo
+        function startCountdown() {
+            let timeLeft = 24 * 60 * 60; // 24 horas em segundos
+            const countdownElement = document.getElementById('countdown');
+            
+            const timer = setInterval(() => {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                } else {
+                    timeLeft--;
+                }
+            }, 1000);
+        }
+        
+        startCountdown();
+
+        // Menu mobile
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Função para fechar a aba
+        function closeTab() {
+            // Tenta fechar a aba
+            window.close();
+            
+            // Se não conseguir fechar (alguns navegadores bloqueiam), tenta voltar
+            setTimeout(() => {
+                if (!window.closed) {
+                    window.history.back();
+                }
+            }, 100);
+        }
+
+        // Controle do overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingButton = document.querySelector('.floating-button');
+            const pageOverlay = document.querySelector('.page-overlay');
+            
+            floatingButton.addEventListener('mouseenter', function() {
+                pageOverlay.style.opacity = '1';
+                pageOverlay.style.visibility = 'visible';
+                document.querySelector('.overlay-message').style.opacity = '1';
+                document.querySelector('.overlay-message').style.transform = 'translateY(0)';
+            });
+            
+            floatingButton.addEventListener('mouseleave', function() {
+                pageOverlay.style.opacity = '0';
+                pageOverlay.style.visibility = 'hidden';
+                document.querySelector('.overlay-message').style.opacity = '0';
+                document.querySelector('.overlay-message').style.transform = 'translateY(20px)';
+            });
+        });
+    </script>
+    
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html> 
